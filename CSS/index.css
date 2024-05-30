@@ -23,8 +23,9 @@ footer{
 .hold-footer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 70px;
+    height: 40%;
 }
 .hold-images{
     display: flex;
@@ -33,19 +34,26 @@ footer{
     gap: 30px;
 }
 .hold-div-2{
-    cursor: pointer;
+    width: 90%;
+    height: 30%;
     font-size: 125%;
     font-family: "JetBrains Mono", monospace;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
     display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	align-content: stretch;
 }
 .privacy{
-    
+    display: flex;
+    width: 90px;
+    cursor: pointer;
 }
 .terms-of-service{
-
+    display: flex;
+    width: 200px;
+    cursor: pointer;
 }
 
 .tumblr-logo{
