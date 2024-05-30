@@ -9,6 +9,7 @@ footer{
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
 }
 .contact-button{
     cursor: pointer;
@@ -32,7 +33,19 @@ footer{
     gap: 30px;
 }
 .hold-div-2{
+    cursor: pointer;
+    font-size: 125%;
+    font-family: "JetBrains Mono", monospace;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+.privacy{
     
+}
+.terms-of-service{
+
 }
 
 .tumblr-logo{

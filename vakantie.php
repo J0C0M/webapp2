@@ -25,8 +25,10 @@
         </div>
 
         <div class = "hold-div-2">
-
+            <div class = "privacy">privacy</div>
+            <div class = "terms-of-service">terms of service</div>
         </div>
+
     </footer>
 </body>
 </html>
