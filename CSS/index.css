@@ -1,7 +1,77 @@
 html,body{
     padding: 0px;
     margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
+
+/*header*/
+footer{
+    background-color: rgba(58, 255, 184, 1);
+    height: 250px;
+    display: flex;
+}
+
+header {
+    background-color: #8AA29E;
+    height: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.epic-vacations-logo {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 48px;
+}
+
+nav {
+    gap: 10%;
+}
+
+.header-btn {
+    font-family: "JetBrains Mono", monospace;
+    text-decoration: none;
+    font-size: 32px;
+    margin: 25px;
+}
+
+.nav-color {
+    color: white;
+    transition: all 0.8s;
+}
+
+.nav-color:hover {
+    color: #393e3d;
+    transition:  0.8s
+}
+
+.btn-backgrnd {
+    background-color: white;
+    height: 77px;
+    width: 155px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.login-color {
+    color: #8AA29E;
+    transition: all 0.8s;
+}
+
+.login-color:hover {
+    color: #dbede9;
+    transition:  0.8s
+}
+
+/*footer*/
 footer{
     background-color: rgba(58, 255, 184, 1);
     height: 250px;
@@ -72,3 +142,4 @@ footer{
     width: 60px;
     height: 60px;
 }
+
