@@ -31,6 +31,7 @@ include("include/connect.php");
 
     <?php
     //include footer
+    include("include/footer.php");
     ?>
 </body>
 </html>
