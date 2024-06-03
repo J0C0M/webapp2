@@ -10,7 +10,11 @@
     <title>Vakantie</title>
 </head>
 
-    <body class="background-image">
+    <body class = "background-image">
+        <video class="video" autoplay loop muted plays-inline>
+            <source src="images/mixkit-bright-orange-sunset-on-beach-2168-full-hd.mp4" type="video/mp4">
+        </video>
+
         <?php
             //header include
             include("include/header.php");
