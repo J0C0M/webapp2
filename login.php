@@ -14,17 +14,23 @@
 <body>
     <div class="form-container">
         <div class="form-box">
-            <p class="login-introduction">
+            <div class="introduction-box">
+            <p class="introduction-text-top">
                 Hallo,
             </p>
-            <p class="login-introduction">
+            <p class="introduction-text-bottom">
                 Welkom!
             </p>
-            <form>
+            </div>
+            <form name="login-form" action="login.php" method="post" class="form">
                 <input type="email" class="email-box" placeholder="Email">
                 <input type="password" class="password-box" placeholder="Wachtwoord">
-            </form>
+                <div class="button-box">
+                <button type="submit" class="submit-button">Sign up</button>
+                <button type="submit" class="submit-button">Log in</button>
         </div>
+        </form>
+    </div>
     </div>
     <video class="video" autoplay loop muted plays-inline>
         <source src="images/login.mp4" type="video/mp4">
