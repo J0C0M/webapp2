@@ -19,6 +19,18 @@ include("include/connect.php");
 
     <div>
         <!--slide show van plaatsen-->
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="images/mcbeach.jpg" alt="3D rendering of a minecraft beach">
+                <img id="slide-2" src="images/gotham.png" alt="3D rendering of gotham city">
+                <img id="slide-3" src="images/lootlake.png" alt="3D rendering of the og fortnite loot lake">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+            </div>
+        </div>
     </div>
     
     <div>
