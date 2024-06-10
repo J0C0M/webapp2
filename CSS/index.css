@@ -26,6 +26,7 @@ html,body{
 /*****************************************************************************************************/
 /*header*/
 header {
+    background-color: #8AA29E;
     height: 140px;
     width: 100%;
     display: flex;
@@ -260,80 +261,38 @@ footer{
     opacity: 95%;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.introduction-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.introduction-text-top {
+.login-introduction {
     font-family: "Poetsen One", sans-serif;
-    font-weight: 400%;
+    font-weight: 400;
     font-style: normal;
     color: white;
-    font-size: 600%;
-    margin: 0%;
-    margin-top: 3%;
-}
-
-.introduction-text-bottom {
-    font-family: "Poetsen One", sans-serif;
-    font-weight: 400%;
-    font-style: normal;
-    color: white;
-    font-size: 600%;
-    margin: 0%;
-    margin-bottom: 5%;
+    font-size: 100px;
+    margin-bottom: -12.5%;
+    margin-left: 12.5%;
 }
 
 .email-box {
     display: flex;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-top: 15%;
+    margin-left: 12.5%;
     border: none;
     outline: none;
-    padding: 3% 5%;
+    padding: 3% 23%;
     border-radius: 30px;
     font-family: "Poetsen One", sans-serif;
     color: white;
-    font-size: 160%;
+    font-size: 25px;
 }
 
 .password-box {
     display: flex;
     margin-top: 5%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 12.5%;
     border: none;
     outline: none;
-    padding: 3% 5%;
+    padding: 3% 23%;
     border-radius: 30px;
     font-family: "Poetsen One", sans-serif;
     color: white;
-    font-size: 160%;
+    font-size: 25px;
 }
-
-.button-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 7%;
-}
-
-.submit-button {
-    margin-top: 3%;
-    border: none;
-    outline: none;
-    padding: 3% 9%;
-    border-radius: 30px;
-    font-family: "Poetsen One", sans-serif;
-    color: #747372;
-    font-size: 160%;
-}
-/*****************************************************************************************************/
