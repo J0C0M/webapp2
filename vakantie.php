@@ -20,8 +20,12 @@
             include("include/header.php");
         ?>
 
-    2<div class = "hold-drop-down-1">
+        <div class = "hold-drop-down-1">
             <div class = drop-down-1></div>
+        </div>
+
+        <div class = "hold-drop-down-2">
+            <div class = drop-down-2></div>
         </div>
 
         <?php
