@@ -32,6 +32,10 @@ include("include/connect.php");
             </div>
         </div>
     </div>
+
+    <div>
+        <!--search bar-->
+    </div>
     
     <div>
         <!--over tab-->
