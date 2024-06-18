@@ -139,12 +139,12 @@ nav {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #fde65e;
+  background-color: #DB5461;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #fde02f;
+  background-color: #DB5461;
 }
 
 /*========================Nav Bar=========================*/
@@ -194,113 +194,89 @@ ul.menu {
   color: midnightblue;
   text-decoration: underline;
 }
-/*=============================Banner=============================*/
-.banner {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
+/*=============================Booking=============================*/
+.booking .book-form{
+  padding: 2rem;
+  background: var(--light-bg);
 }
+
+.booking .book-form .flex{
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 2rem;
+}
+
+.booking .book-form .flex .inputbox{
+  flex: 1 1 41rem;
+}
+
+.booking .book-form .flex .inputbox input{
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  color: var(--light-black);
+  text-transform: none;
+  margin-top: 1.5rem;
+  border: var(--border);
+}
+
+.booking .book-form .flex .inputbox input:focus{
+  background: var(--black);
+  color: var(--white);
+}
+
+.booking .book-form .flex .inputbox input:focus::placeholder{
+  color: var(--light-white);
+}
+
+.booking .book-form .flex .inputbox span{
+  font-size: 1.5rem;
+  color: var(--light-black);
+}
+
+.booking .book-form .btn{
+  margin-top: 0px;
+}
+
+.btn{
+  display: inline-block;
+  background: var(--black);
+  margin-top: 1rem;
+  color: var(--white);
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #00FFC2;
+}
+
+.heading-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: #00FFC2;
+  font-family: "Poetsen One", sans-serif;
+}
+@keyframes fadeIn {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+/*=============================Banner=============================*/
 
 .banner-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 80%;
+  left: 36.7%;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
   z-index: -1;
   transform: translate(-50%, -50%);
-}
-
-.banner::before {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.banner-text-item {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-
-.banner-heading {
-  flex: 1;
-}
-
-.banner-heading h1 {
-  font-size: 80px;
-  font-weight: normal;
-  color: #00FFC2;
-  font-family: "Poetsen One", sans-serif;
-}
-
-.banner-text-item .form {
-  flex: 1;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  width: 70%;
-  padding: 1% 2%;
-}
-
-.banner-text-item input,
-.banner-text-item .date,
-.banner-text-item .book {
-  padding: 15px;
-  margin-right: 10px;
-  font-size: 18px;
-  font-family: Roboto;
-  border-radius: 5px;
-  outline: 0;
-  border: none;
-}
-
-.banner-text-item input {
-  width: 50%;
-  flex: 2;
-}
-
-.banner-text-item .date {
-  width: 20%;
-  flex: 1;
-}
-
-.banner-text-item .book {
-  width: 20%;
-  flex: 1;
-}
-
-.banner-text-item .book {
-  text-decoration: none;
-  color: #000;
-  text-transform: uppercase;
-  padding: 15px;
-  cursor: pointer;
-  background-color: #00FFC2;
-  font-size: 16px;
-  font-weight: normal;
-  font-family: "Barlow Condensed";
-  width: 20%;
 }
 
 /*===============Footer===================*/

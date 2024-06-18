@@ -22,37 +22,59 @@
         ?>
         
         <!--===============Banner================-->
-        <section class="banner">
     <video autoplay muted loop class="banner-video">
         <source src="images/mixkit-bright-orange-sunset-on-beach-2168-full-hd.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="banner-text-item">
-        <div class="banner-heading">
-            <h1>Find your Next tour!</h1>
+
+
+        <!--===== Booking =====-->
+    <section class = "booking">
+
+        <h1 class = "heading-title">Find your Next tour!</h1>
+
+        <form action="book_form.php" method="post" class = "book-form">
+
+        <div class = "flex">
+            <div class = "inputbox">
+                <span>Name :</span>
+                <input type="text" placeholder = "Enter your name" name = "Name">
+            </div>
+            <div class = "inputbox">
+                <span>Email :</span>
+                <input type="email" placeholder = "Enter your email" name = "Email">
+            </div>
+            <div class = "inputbox">
+                <span>Phone number :</span>
+                <input type="number" placeholder = "Enter your phone number" name = "Phone number">
+            </div>
+            <div class = "inputbox">
+                <span>Address :</span>
+                <input type="text" placeholder = "Enter your address" name = "Address">
+            </div>
+            <div class = "inputbox">
+                <span>Where to :</span>
+                <input type="text" placeholder = "Enter your destenation" name = "Destenation">
+            </div>
+            <div class = "inputbox">
+                <span>How many :</span>
+                <input type="number" placeholder = "Enter how many guests" name = "Guests">
+            </div>
+            <div class = "inputbox">
+                <span>Arrivals :</span>
+                <input type="date" name = "Arrivals">
+            </div>
+            <div class = "inputbox">
+                <span>Leaving :</span>
+                <input type="date" name = "Leaving">
+            </div>
         </div>
-        <form class="form">
-            <input type="text" list="mylist" placeholder="Where would you like to go?">
-                <datalist id="mylist">
-                    <option>London</option>
-                    <option>Canada</option>
-                    <option>Monaco</option>
-                    <option>France</option>
-                    <option>Japan</option>
-                    <option>Switzerland</option>
-                    <option>Seoul</option>
-                </datalist>
-                <input type="date" class="date">
-                <a href="#" class="book">book</a>
-            </form>
-        </div>
+
+        <input type="Submit" value = "Submit" class = "btn" name = "Send">
+
+        </form>
+
     </section>
-
-    <!--
-        
-
-
-    -->
 
         <!--===========Footer=================-->
         <div class="footer">
