@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 html,body{
-    padding: 0px;
     margin: 0px;
     display: flex;
     justify-content: space-between;
@@ -364,3 +363,14 @@ footer{
     color: white;
     font-size: 25px;
 }
+
+/*over ons home pag*/
+.over-ons-home {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    height: 506px;
+    width: 100%;
+    background-color: #E3F2FD;
+}
+

@@ -13,6 +13,11 @@
     include("include/header.php");
     ?>
 
+<div class="over-ons-home">
+        <!--search bar-->
+        <h1>Boek snel een crazy vakantie bij Epic Vacations</h1>
+    </div>
+
     <?php
     //header include
     include("include/footer.php");
