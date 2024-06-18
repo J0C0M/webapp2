@@ -12,6 +12,13 @@
     include("include/header.php");
     ?>
 
+    <div id="cookie-consent-banner" class="cookie-banner">
+        <p>Wij gebruiken cookies om uw ervaring te verbeteren. Door onze site te gebruiken, gaat u akkoord met ons gebruik van cookies. <a href="cookie.php">Leer meer</a>.</p>
+        <button id="accept-cookies">Accept</button>
+    </div>
+
+    <script src="javascript/cookie.js"></script> 
+
     <div class="content">
         <h1>Meer informatie over cookies</h1>
         <p>Op onze website gebruiken we cookies om uw ervaring te verbeteren. Hieronder vindt u meer informatie over hoe we cookies gebruiken en wat dat voor u betekent.</p>
