@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 html,body{
     padding: 0px;
     margin: 0px;
@@ -5,6 +7,45 @@ html,body{
     justify-content: space-between;
     flex-direction: column;
     height: 100%;
+}
+
+/*cookie css*/
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 36, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cookie-banner p {
+    margin: 0;
+    flex: 1;
+}
+
+.cookie-banner a {
+    color: rgba(58, 255, 184, 1);
+    text-decoration: underline;
+}
+
+.cookie-banner button {
+    background-color: rgba(58, 255, 184, 1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 10%;
+}
+
+.cookie-banner button:hover {
+    background-color: #4CAF50;
 }
 
 /*****************************************************************************************************/
