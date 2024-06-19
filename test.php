@@ -38,35 +38,35 @@
         <div class = "flex">
             <div class = "inputbox">
                 <span>Name :</span>
-                <input type="text" placeholder = "Enter your name" name = "Name">
+                <input class = "input" type="text" placeholder = "Enter your name" name = "Name">
             </div>
             <div class = "inputbox">
                 <span>Email :</span>
-                <input type="email" placeholder = "Enter your email" name = "Email">
+                <input class = "input" type="email" placeholder = "Enter your email" name = "Email">
             </div>
             <div class = "inputbox">
                 <span>Phone number :</span>
-                <input type="number" placeholder = "Enter your phone number" name = "Phone number">
+                <input class = "input" type="number" placeholder = "Enter your phone number" name = "Phone number">
             </div>
             <div class = "inputbox">
                 <span>Address :</span>
-                <input type="text" placeholder = "Enter your address" name = "Address">
+                <input class = "input" type="text" placeholder = "Enter your address" name = "Address">
             </div>
             <div class = "inputbox">
                 <span>Where to :</span>
-                <input type="text" placeholder = "Enter your destenation" name = "Destenation">
+                <input class = "input" type="text" placeholder = "Enter your destenation" name = "Destenation">
             </div>
             <div class = "inputbox">
                 <span>How many :</span>
-                <input type="number" placeholder = "Enter how many guests" name = "Guests">
+                <input class = "input" type="number" placeholder = "Enter how many guests" name = "Guests">
             </div>
             <div class = "inputbox">
                 <span>Arrivals :</span>
-                <input type="date" name = "Arrivals">
+                <input class = "input" type="date" name = "Arrivals">
             </div>
             <div class = "inputbox">
                 <span>Leaving :</span>
-                <input type="date" name = "Leaving">
+                <input class = "input" type="date" name = "Leaving">
             </div>
         </div>
 
