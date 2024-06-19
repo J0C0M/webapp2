@@ -270,7 +270,7 @@ ul.menu {
   color: #00FFC2;
   font-family: "Poetsen One", sans-serif;
   animation: fadeIn .6s linear backwards .6s;
-  -webkit-text-stroke: black 0.5px;
+  -webkit-text-stroke: rgba(0, 0, 0, 0.515) 0.5px;
 }
 
 @keyframes fadeIn {
