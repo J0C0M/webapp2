@@ -47,13 +47,15 @@ include("include/connect.php");
     <div>
         <!--over tab-->
         <div class="over-ons-home">
-            <h1>Boek snel een crazy vakantie bij Epic Vacations</h1>
-            <div>
-                <p>Bij Epic Vacations maken we jouw droomreizen werkelijkheid door je de kans te bieden om echte vakanties te boeken naar de meest fantastische en iconische locaties in de wereld! Of je nu altijd al hebt gedroomd van een bezoek aan de duistere straten van Gotham City, 90s cranken op het Fortnite eiland, een hotel boeken in Bikini Bottom, of andere fantastische bestemmingen wilt verkennen, dan is dit de enige en beste plaats daarvoor.</p>
-                <img src="images/arrowpng.parspng 1.png">
+            <h1 class="base-h1">Boek snel een crazy vakantie bij Epic Vacations</h1>
+            <div class="about-img-row">
+                <p class="base-p">Bij Epic Vacations maken we jouw droomreizen werkelijkheid door je de kans te bieden om echte vakanties te boeken naar de meest fantastische en iconische locaties in de wereld! Of je nu altijd al hebt gedroomd van een bezoek aan de duistere straten van Gotham City, 90s cranken op het Fortnite eiland, een hotel boeken in Bikini Bottom, of andere fantastische bestemmingen wilt verkennen, dan is dit de enige en beste plaats daarvoor.</p>
+                <a href="overOns.php">
+                    <img class="arrow-img" src="images/arrowpng.parspng 1.png">
+                </a>
             </div>
         </div>
-    </div>
+    </div>  
     <?php 
     //booking
     ?>
