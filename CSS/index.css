@@ -439,3 +439,24 @@ footer{
     height: 50px;
     margin-bottom: 3%;
 }
+
+/*booking link index*/
+.booking-index {
+    background-color: #686963;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 708px;
+    width: 100%;
+}
+
+.index-sgb-images-names {
+    gap: 50px;
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}

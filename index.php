@@ -56,9 +56,37 @@ include("include/connect.php");
             </div>
         </div>
     </div>  
-    <?php 
-    //booking
-    ?>
+    <div> 
+    <!--booking link-->
+        <div class="booking-index">
+            <div class="index-boeken-arrow row">
+                <h1>Boeken</h1>
+                <a href="vakantie.php">
+                    <img class="arrow-img" src="images/arrow.png">
+                </a>
+            </div>
+            <div class="index-sgb-images-names row">
+                <div class="image-text-seperator">
+                    <img src="images/Screenshot 2024-05-16 111744 1.png">
+                    <h1>Sahara Desert</h1>
+                </div>
+                <div class="image-text-seperator">
+                    <img src="images/Gotham_City_Batman_Vol_3_14 1.png">
+                    <h1>Gotham City</h1>
+                </div>
+                <div class="image-text-seperator">
+                    <img src="images/Screenshot 2024-05-16 112022 1.png">
+                    <h1>Bikini Bottom</h1>
+                </div>
+            </div>
+            <div class="index-boeken-arrow row">
+                <h1>Reviews</h1>
+                <a href="vakantie.php">
+                    <img class="arrow-img" src="images/arrow.png">
+                </a>
+            </div>
+        </div>
+    </div>
 
     <?php
     //include footer
