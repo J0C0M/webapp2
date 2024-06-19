@@ -1,3 +1,14 @@
+<?php 
+    session_start();
+
+if (isset($_POST['login'])){
+    if ($_POST['username'] == "admin" && $_POST['password'] == "geheim") {
+        $_SESSION['username'] = "admin";
+        header(header: "Location: admin.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,11 +34,11 @@
             </p>
             </div>
             <form name="login-form" action="login.php" method="post" class="form">
-                <input type="email" class="email-box" placeholder="Email">
+                <input type="text" class="email-box" placeholder="Email">
                 <input type="password" class="password-box" placeholder="Wachtwoord">
                 <div class="button-box">
                 <button type="submit" class="submit-button">Sign up</button>
-                <button type="submit" class="submit-button">Log in</button>
+                <button type="submit" value="login" class="submit-button">Log in</button>
         </div>
         </form>
     </div>
