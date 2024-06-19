@@ -315,11 +315,12 @@ footer{
 .form-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 3%;
 } 
 
 .form-box {
-    width: 50%;
-    height: 700px;
+    width: 40%;
+    height: 90%;
     background-color: #DB5461;
     margin-top: 3%;
     margin-bottom: 3%;
@@ -328,41 +329,80 @@ footer{
     opacity: 95%;
 }
 
-.login-introduction {
+.introduction-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction-text-top {
     font-family: "Poetsen One", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: white;
-    font-size: 100px;
-    margin-bottom: -12.5%;
-    margin-left: 12.5%;
+    font-size: 700%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.introduction-text-bottom {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 700%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .email-box {
     display: flex;
-    margin-top: 15%;
-    margin-left: 12.5%;
+    margin-top: 5%;
+    width: 70%;
     border: none;
     outline: none;
-    padding: 3% 23%;
+    padding: 3% 3%;
     border-radius: 30px;
     font-family: "Poetsen One", sans-serif;
-    color: white;
-    font-size: 25px;
+    font-size: 150%;
 }
 
 .password-box {
     display: flex;
     margin-top: 5%;
-    margin-left: 12.5%;
+    width: 70%;
     border: none;
     outline: none;
-    padding: 3% 23%;
+    padding: 3% 3%;
     border-radius: 30px;
     font-family: "Poetsen One", sans-serif;
-    color: white;
-    font-size: 25px;
+    font-size: 150%;
 }
+
+.button-box {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.submit-button {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 150%;
+    border: none;
+    outline: none;
+    padding: 3% 10%;
+    border-radius: 30px;
+}
+/*****************************************************************************************************/
 
 /*over ons home pag*/
 .over-ons-home {
@@ -373,4 +413,3 @@ footer{
     width: 100%;
     background-color: #E3F2FD;
 }
-
