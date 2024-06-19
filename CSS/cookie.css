@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*header*/
+header {
+    background-color: #8AA29E;
+    height: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.epic-vacations-logo {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 48px;
+}
+
+nav {
+    gap: 10%;
+}
+
+.header-btn {
+    font-family: "JetBrains Mono", monospace;
+    text-decoration: none;
+    font-size: 32px;
+    margin: 25px;
+}
+
+.nav-color {
+    color: white;
+    transition: all 0.8s;
+}
+
+.nav-color:hover {
+    color: #393e3d;
+    transition:  0.8s
+}
+
+.btn-backgrnd {
+    background-color: white;
+    height: 77px;
+    width: 155px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.login-color {
+    color: #8AA29E;
+    transition: all 0.8s;
+}
+
+.login-color:hover {
+    color: #dbede9;
+    transition:  0.8s
+}
+
+/*slider*/
+.slider-container {
+    padding: 2rem;
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+/*****************************************************************************************************/
+/*footer*/
+footer{
+    background-color: rgba(58, 255, 184, 1);
+    height: 250px;
+    font-family: "JetBrains Mono", monospace;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    padding: 10px;
+}
+.contact-button{
+    cursor: pointer;
+    width: 200px;
+}
+.hold-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    height: 40%;
+    font-size: 25px;
+}
+.hold-images{
+    display: flex;
+    gap: 30px;
+}
+.hold-div-2{
+    cursor: pointer;
+    width: 90%;
+    height: 30%;
+    font-size: 125%;
+    font-family: "JetBrains Mono", monospace;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	align-content: stretch;
+}
+
+.privacy{
+    display: flex;
+    width: 90px;
+}
+
+.terms-of-service{
+    display: flex;
+    width: 200px;
+    cursor: pointer;
+}
+
+/*cookie css*/
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 36, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cookie-banner p {
+    margin: 0;
+    flex: 1;
+}
+
+.cookie-banner a {
+    color: rgba(58, 255, 184, 1);
+    text-decoration: underline;
+}
+
+.cookie-banner button {
+    background-color: rgba(58, 255, 184, 1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 10%;
+}
+
+.cookie-banner button:hover {
+    background-color: #4CAF50;
+}
+
+/*****************************************************************************************************/
+.background-image {
+    background-image: url(https://assets.mixkit.co/videos/2168/2168-720.mp41);
+    background-size: cover; /* Adjusts the size of the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Fixes the image so it doesn't scroll with the content */
+    min-height: 100%;
+}
+.video{
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.video-2{
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 50%;
+}

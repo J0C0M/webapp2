@@ -17,6 +17,13 @@ include("include/connect.php");
     include("include/header.php");
     ?>
 
+    <div id="cookie-consent-banner" class="cookie-banner">
+        <p>Wij gebruiken cookies om uw ervaring te verbeteren. Door onze site te gebruiken, gaat u akkoord met ons gebruik van cookies. <a href="cookie.php">Leer meer</a>.</p>
+        <button id="accept-cookies">Accept</button>
+    </div>
+
+    <script src="javascript/cookie.js"></script> 
+
     <div>
         <!--slide show van plaatsen-->
         <div class="slider-wrapper">
@@ -39,8 +46,14 @@ include("include/connect.php");
     
     <div>
         <!--over tab-->
+        <div class="over-ons-home">
+            <h1>Boek snel een crazy vakantie bij Epic Vacations</h1>
+            <div>
+                <p>Bij Epic Vacations maken we jouw droomreizen werkelijkheid door je de kans te bieden om echte vakanties te boeken naar de meest fantastische en iconische locaties in de wereld! Of je nu altijd al hebt gedroomd van een bezoek aan de duistere straten van Gotham City, 90s cranken op het Fortnite eiland, een hotel boeken in Bikini Bottom, of andere fantastische bestemmingen wilt verkennen, dan is dit de enige en beste plaats daarvoor.</p>
+                <img src="images/arrowpng.parspng 1.png">
+            </div>
+        </div>
     </div>
-
     <?php 
     //booking
     ?>
