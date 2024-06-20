@@ -1,7 +1,7 @@
 <?php
-    $connection = mysqli_connect('localhost', 'root', 'book_db', )
+    $connection = mysqli_connect('localhost', 'root', '',  'book_db', )
 
-    if(isset($_POST['Send'])){
+    if(isset($_POST['send'])){
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone_number = $_POST['phone_number'];
@@ -11,7 +11,7 @@
         $arrival = $_POST['arrival'];
         $leaving = $_POST['leaving'];
 
-        $request = "insert into book_form(name,	email, phone_number, address, destenation, guests, arrivals, leaving)
+        $request = " insert into book_form(name,	email, phone_number, address, destenation, guests, arrivals, leaving)
         values ('$name', '$email', '$phone_number', '$address', '$destenation', '$guests', '$arrival', '$leaving')";
 
         mysqli_query($connection, $request);
