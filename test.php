@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Go Trip</title>
+    <title>Vakantie Pagina</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 
         <h1 class = "heading-title">Find your Next tour!</h1>
 
-        <form action="book_form.php" method="post" class = "book-form">
+        <form action="book_form.php" method="post" class = "book_form">
 
         <div class = "flex">
             <div class = "inputbox">
@@ -70,7 +70,7 @@
             </div>
         </div>
 
-        <input type="Submit" value = "Submit" class = "btn" name = "Send">
+        <input type="Submit" value = "Submit" class = "btn" name = "send">
 
         </form>
 
