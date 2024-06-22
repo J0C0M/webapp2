@@ -541,4 +541,27 @@ footer{
 .row {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.index-btn {
+    font-family: "Raleway";
+    text-decoration: none;
+    font-size: 42pt;
+    margin: 25px;
+    color: black;
+    font-weight: 500;
+}
+
+.image-text-seperator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.index-vacation-name {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-size: 30pt;
+    margin-bottom: 0px;
 }

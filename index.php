@@ -60,7 +60,7 @@ include("include/connect.php");
     <!--booking link-->
         <div class="booking-index">
             <div class="index-boeken-arrow row">
-                <a>Boeken</a>
+                <a class="index-btn" href="vakantie.php">Boeken</a>
                 <a href="vakantie.php">
                     <img class="arrow-img" src="images/arrow.png">
                 </a>
@@ -68,19 +68,19 @@ include("include/connect.php");
             <div class="index-sgb-images-names row">
                 <div class="image-text-seperator">
                     <img src="images/Screenshot 2024-05-16 111744 1.png">
-                    <h1>Sahara Desert</h1>
+                    <h1 class="index-vacation-name">Sahara Desert</h1>
                 </div>
                 <div class="image-text-seperator">
                     <img src="images/Gotham_City_Batman_Vol_3_14 1.png">
-                    <h1>Gotham City</h1>
+                    <h1 class="index-vacation-name">Gotham City</h1>
                 </div>
                 <div class="image-text-seperator">
                     <img src="images/Screenshot 2024-05-16 112022 1.png">
-                    <h1>Bikini Bottom</h1>
+                    <h1 class="index-vacation-name">Bikini Bottom</h1>
                 </div>
             </div>
             <div class="index-boeken-arrow row">
-                <a>Reviews</a>
+                <a class="index-btn" href="vakantie.php">Reviews</a>
                 <a href="vakantie.php">
                     <img class="arrow-img" src="images/arrow.png">
                 </a>
