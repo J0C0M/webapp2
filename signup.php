@@ -34,6 +34,9 @@
         <source src="images/login.mp4" type="video/mp4">
     </video>
 </body>
-<?php include("include/footer.php"); ?>
+<?php include("include/footer.php");
+phpinfo();
+?>
+
 
 </html>
