@@ -19,11 +19,11 @@
                     Maak een account!
                 </p>
             </div>
-            <form action="signupLogic.php" name="signup-form" method="post" class="signup-form">
+            <form action="signupLogic.php" name="signup-form" method="post" class="signup-form" novalidate>
                 <input id="name" type="text" name="name" class="signup-input-box" placeholder="Naam">
                 <input id="email" type="email" name="email" class="signup-input-box" placeholder="Email">
                 <input id="password" type="password" name="password" class="signup-input-box" placeholder="Wachtwoord">
-                <input id="password-confirmation" type="password" name="password-confirmation" class="signup-input-box" placeholder="Bevestig wachtwoord">
+                <input id="password_confirmation" type="password" name="password_confirmation" class="signup-input-box" placeholder="Bevestig wachtwoord">
                 <div class="signup-button-box">
                     <button class="signup-submit-button">Create</button>
                 </div>
