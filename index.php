@@ -60,7 +60,7 @@ include("include/connect.php");
     <!--booking link-->
         <div class="booking-index">
             <div class="index-boeken-arrow row">
-                <h1>Boeken</h1>
+                <a>Boeken</a>
                 <a href="vakantie.php">
                     <img class="arrow-img" src="images/arrow.png">
                 </a>
@@ -80,7 +80,7 @@ include("include/connect.php");
                 </div>
             </div>
             <div class="index-boeken-arrow row">
-                <h1>Reviews</h1>
+                <a>Reviews</a>
                 <a href="vakantie.php">
                     <img class="arrow-img" src="images/arrow.png">
                 </a>
