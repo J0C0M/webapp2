@@ -40,7 +40,7 @@ include("include/connect.php");
         </div>
     </div>
 
-    <div>
+    <div class="zoek-bar">
         <!--search bar-->
     </div>
     
@@ -56,6 +56,7 @@ include("include/connect.php");
             </div>
         </div>
     </div>  
+    
     <div> 
     <!--booking link-->
         <div class="booking-index">
