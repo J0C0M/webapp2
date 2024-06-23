@@ -12,22 +12,22 @@
 <?php include("include/header.php"); ?>
 
 <body>
-    <div class="form-container">
-        <div class="form-box">
-            <div class="introduction-box">
-            <p class="introduction-text-top">
+    <div class="login-form-container">
+        <div class="login-form-box">
+            <div class="login-introduction-box">
+            <p class="login-introduction-text-top">
                 Hallo,
             </p>
-            <p class="introduction-text-bottom">
+            <p class="login-introduction-text-bottom">
                 Welkom!
             </p>
             </div>
-            <form name="login-form" action="login.php" method="post" class="form">
-                <input type="text" class="email-box" placeholder="Email">
-                <input type="password" class="password-box" placeholder="Wachtwoord">
-                <div class="button-box">
-                <button type="submit" class="submit-button">Sign up</button>
-                <button type="submit" value="login" class="submit-button">Log in</button>
+            <form name="login-form" action="#" method="post" class="login-form">
+                <input type="text" class="login-name-box" placeholder="Naam">
+                <input type="password" class="login-password-box" placeholder="Wachtwoord">
+                <div class="login-button-box">
+                <a class="login-signup-button" href="signup.php">Sign up</a>
+                <button type="submit" value="login" class="login-submit-button">Log in</button>
         </div>
         </form>
     </div>

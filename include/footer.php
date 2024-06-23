@@ -8,11 +8,11 @@
         <a href="#"><img class= "instagram-logo" src="/images/instagram-svgrepo-com.png" alt="logo of instagram"></a>
         <a href="#"><img class= "youtube-logo" src="/images/youtube-svgrepo-com.png" alt="logo of youtube"></a>
         </div>
-        <div class = "contact-button">contact</div>
+        <a href="contact.php" class = "contact-button">contact</a>
         </div>
         <div class = "hold-div-2">
-            <div class = "privacy">privacy</div>
-            <div class = "terms-of-service">terms of service</div>
+            <a href="privacy.php" class = "privacy">privacy</a>
+            <a href="ToS.php" class = "terms-of-service">terms of service</a>
         </div>
         
 </footer>
