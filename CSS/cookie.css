@@ -197,11 +197,15 @@ footer{
 }
 
 .privacy{
+    color: black;
+    text-decoration: none;
     display: flex;
     width: 90px;
 }
 
 .terms-of-service{
+    color: black;
+    text-decoration: none;
     display: flex;
     width: 200px;
     cursor: pointer;
