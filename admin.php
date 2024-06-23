@@ -7,9 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
+    <?php
+    //header include
+    include("include/header.php");
+    ?>
+
     skibidi
+
+    <?php
+    //include footer
+    include("include/footer.php");
+    ?>
 </body>
 
 </html>
