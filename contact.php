@@ -14,48 +14,23 @@
     ?>
 
     <div class="contact-container">
-        <h1>Contact Us</h1>
+        <h1 class="index-btn">Contact us</h1>
         <form action="contact.php" method="post">
             <div class="form-group">
-                <label for="name">Name:</label>
+                <label class="contact-text" for="name">Name</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label class="contact-text" for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="message">Message:</label>
+                <label class="contact-text" for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
             <button type="submit">Submit</button>
         </form>
     </div>
-
-    <?php 
-        include("include/connect.php");
-
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = htmlspecialchars($_POST['name']);
-        $email = htmlspecialchars($_POST['email']);
-        $message = htmlspecialchars($_POST['message']);
-
-        $sql = "INSERT INTO messages (name, email, message) VALUES ('$name', '$email', '$message')";
-
-        
-        if ($dsn->query($sql) === TRUE) {
-            echo "Thank you for contacting us. We will get back to you shortly.";
-        } else {
-            echo "Error: " . $sql . "<br>" . $dsn->error;
-        }
-
-        $dsn->close();
-    } else {
-        echo "Invalid request method.";
-    }
-?>
-
 
     <?php
     //include footer
