@@ -35,8 +35,6 @@
     </video>
 </body>
 <?php include("include/footer.php");
-phpinfo();
 ?>
-
 
 </html>
