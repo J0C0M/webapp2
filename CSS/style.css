@@ -348,6 +348,89 @@ ul.menu {
   color: #ffa801;
 }
 
+/*****************************************************************************************************/
+/*footer*/
+footer{
+  background-color: rgba(58, 255, 184, 1);
+  height: 250px;
+  font-family: "JetBrains Mono", monospace;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  padding: 10px;
+}
+.contact-button{
+  color: black;
+  text-decoration: none;
+  display: flex;
+  width: 200px;
+  cursor: pointer;
+}
+
+.hold-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  height: 40%;
+  font-size: 25px;
+}
+.hold-images{
+  display: flex;
+  gap: 30px;
+}
+.hold-div-2{
+  cursor: pointer;
+  width: 90%;
+  height: 30%;
+  font-size: 125%;
+  font-family: "JetBrains Mono", monospace;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-between;
+align-items: flex-end;
+align-content: stretch;
+}
+
+.privacy{
+  color: black;
+  text-decoration: none;
+  display: flex;
+  width: 90px;
+}
+
+.terms-of-service{
+  color: black;
+  text-decoration: none;
+  display: flex;
+  width: 200px;
+  cursor: pointer;
+}
+
+/*****************************************************************************************************/
+.tumblr-logo{
+  width: 60px;
+  height: 60px;
+}
+.youtube-logo{
+  width: 60px;
+  height: 60px;
+}
+.pinterest-logo{
+  width: 60px;
+  height: 60px;
+}
+.instagram-logo{
+  width: 60px;
+  height: 60px;
+}
+
 /*==========================Responsive=============================*/
 @media all and (max-width: 1172px) {
   .banner-text-item .form {
