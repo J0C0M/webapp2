@@ -33,40 +33,40 @@
 
         <h1 class = "heading-title">Find your Next tour!</h1>
 
-        <form action="book_form.php" method="post" class = "book_form">
+        <form action="book_form.php" method="post" class = "book-form">
 
         <div class = "flex">
             <div class = "inputbox">
                 <span>Name :</span>
-                <input class = "input" type="text" placeholder = "Enter your name" name = "Name">
+                <input class = "input" type="text" placeholder = "Enter your name" name = "name">
             </div>
             <div class = "inputbox">
                 <span>Email :</span>
-                <input class = "input" type="email" placeholder = "Enter your email" name = "Email">
+                <input class = "input" type="email" placeholder = "Enter your email" name = "email">
             </div>
             <div class = "inputbox">
                 <span>Phone number :</span>
-                <input class = "input" type="number" placeholder = "Enter your phone number" name = "Phone number">
+                <input class = "input" type="number" placeholder = "Enter your phone number" name = "phone_number">
             </div>
             <div class = "inputbox">
                 <span>Address :</span>
-                <input class = "input" type="text" placeholder = "Enter your address" name = "Address">
+                <input class = "input" type="text" placeholder = "Enter your address" name = "address">
             </div>
             <div class = "inputbox">
                 <span>Where to :</span>
-                <input class = "input" type="text" placeholder = "Enter your destenation" name = "Destenation">
+                <input class = "input" type="text" placeholder = "Enter your destenation" name = "destenation">
             </div>
             <div class = "inputbox">
                 <span>How many :</span>
-                <input class = "input" type="number" placeholder = "Enter how many guests" name = "Guests">
+                <input class = "input" type="number" placeholder = "Enter how many guests" name = "guests">
             </div>
             <div class = "inputbox">
                 <span>Arrivals :</span>
-                <input class = "input" type="date" name = "Arrivals">
+                <input class = "input" type="date" name = "arrivals">
             </div>
             <div class = "inputbox">
                 <span>Leaving :</span>
-                <input class = "input" type="date" name = "Leaving">
+                <input class = "input" type="date" name = "leaving">
             </div>
         </div>
 
