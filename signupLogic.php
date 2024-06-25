@@ -1,4 +1,8 @@
+<?php ob_start(); ?>
+<?php require_once "include/connect.php" ?>
+
 <?php
+
 
 // checkt of er een naam is ingevuld
 if (empty($_POST["name"])) {
@@ -33,8 +37,15 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
 // zorgt ervoor dat je wachtwoord in de database random generated nummers en cijfers wordt
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-$mysqli = require __DIR__ . "/include/database.php";
-    
+$sql = "INSERT INTO user (name, email, password_hash)
+        VALUES (:name, :email, :password_hash)";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(":name", $_POST['name']);
+$stmt->bindParam(":email", $_POST['email']);
+$stmt->bindParam(":password_hash", $_POST['password']);
 
-print_r($_POST);
-var_dump($password_hash);
+$stmt->execute();
+header("Location: login.php");
+
+
+?>  
