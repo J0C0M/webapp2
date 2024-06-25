@@ -75,10 +75,12 @@
         </form>
 
     </section>
-    <?php
-            //header include
-            include("include/footer.php");
+
+        <?php
+        //include footer
+        include("include/footer.php");
         ?>
+    </body>
 </html>
 </body>
 
