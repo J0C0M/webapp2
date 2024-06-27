@@ -1,113 +1,50 @@
-<!DOCTYPE html>
+<?php
+// Show PHP errors
+ini_set('display_errors',1);
+ini_set('display_startup_erros',1);
+error_reporting(E_ALL);
+
+// GET
+
+
+// POST
+
+?>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="CSS/style.css">
-    <title>Vakantie Pagina</title>
-</head>
-
-<body>
-
+    <head>
+        <!-- Head metas, css, and title -->
+        <?php require_once 'includes/head.php'; ?>
+    </head>
     <body>
-
-        <?php
-            //header include
-            include("include/header.php");
-        ?>
-        
-        <!--===============Banner================-->
-    <video autoplay muted loop class="banner-video">
-        <source src="images/mixkit-bright-orange-sunset-on-beach-2168-full-hd.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-
-        <!--===== Booking =====-->
-    <section class = "booking">
-
-        <h1 class = "heading-title">Find your Next tour!</h1>
-
-        <form action="book_form.php" method="post" class = "book-form">
-
-        <div class = "flex">
-            <div class = "inputbox">
-                <span>Name :</span>
-                <input class = "input" type="text" placeholder = "Enter your name" name = "name">
-            </div>
-            <div class = "inputbox">
-                <span>Email :</span>
-                <input class = "input" type="email" placeholder = "Enter your email" name = "email">
-            </div>
-            <div class = "inputbox">
-                <span>Phone number :</span>
-                <input class = "input" type="number" placeholder = "Enter your phone number" name = "phone_number">
-            </div>
-            <div class = "inputbox">
-                <span>Address :</span>
-                <input class = "input" type="text" placeholder = "Enter your address" name = "address">
-            </div>
-            <div class = "inputbox">
-                <span>Where to :</span>
-                <input class = "input" type="text" placeholder = "Enter your destenation" name = "destenation">
-            </div>
-            <div class = "inputbox">
-                <span>How many :</span>
-                <input class = "input" type="number" placeholder = "Enter how many guests" name = "guests">
-            </div>
-            <div class = "inputbox">
-                <span>Arrivals :</span>
-                <input class = "input" type="date" name = "arrivals">
-            </div>
-            <div class = "inputbox">
-                <span>Leaving :</span>
-                <input class = "input" type="date" name = "leaving">
+        <!-- Header banner -->
+        <?php require_once 'includes/header.php'; ?>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar menu -->
+                <?php require_once 'includes/sidebar.php'; ?>
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                  <h1 style="margin-top: 10px">Add / Edit Users</h1>
+                  <p>Required fields are in (*)</p>
+                  <form  method="post">
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input class="form-control" type="text" name="id" id="id" value="" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input  class="form-control" type="text" name="name" id="name" placeholder="First Name and Last Name" value="" required maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input  class="form-control" type="text" name="email" id="email" placeholder="johndoel@gmail.com" value="" required maxlength="100">
+                    </div>
+                    <input class="btn btn-primary mb-2" type="button" name="btn_save" value="Save">                    
+                  </form>
+                </main>
             </div>
         </div>
-
-        <input type="Submit" value = "Submit" class = "btn" name = "send">
-
-        </form>
-
-    </section>
-
-        <!--===========Footer=================-->
-        <div class="footer">
-            <div class="links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li>Offers & Discounts</li>
-                    <li>Get Coupon</li>
-                    <li>Contact Us</li>
-                    <li>About</li>
-                </ul>
-            </div>
-            <div class="links">
-                <h3>New Products</h3>
-                <ul>
-                    <li>Woman Cloth</li>
-                    <li>Fashion Accessories</li>
-                    <li>Man Accessories</li>
-                    <li>Rubber made Toys</li>
-                </ul>
-            </div>
-            <div class="links">
-                <h3>Support</h3>
-                <ul>
-                    <li>Frequently Asked Questions</li>
-                    <li>Report a Payment Issue</li>
-                    <li>Terms & Conditions</li>
-                    <li>Privacy Policy</li>
-                </ul>
-            </div>
-        </div>
+        <!-- Footer scripts, and functions -->
+        <?php require_once 'includes/footer.php'; ?>
     </body>
-</html>
-</body>
-
 </html>
