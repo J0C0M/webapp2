@@ -1,16 +1,19 @@
 <?php
-include("conn.php");    
+include("include/connect.php");    
 
 /** 
 * @var PDO $pdo 
 */
 
 if (isset($_POST['submit'])) {
-    $sql = "INSERT INTO menukaart(name, discription, price) VALUES (:name, :discription, :price)";
+    $sql = "INSERT INTO vakantie(activities, image, name, about, more, price) VALUES (:activities, :image, :name, :about, : more, :price)";
 
     $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":activities", $_POST['activities']);
+    $stmt->bindParam(":image", $_POST['image']);
     $stmt->bindParam(":name", $_POST['name']);
-    $stmt->bindParam(":discription", $_POST['discription']);
+    $stmt->bindParam(":about", $_POST['about']);
+    $stmt->bindParam(":more", $_POST['more']);
     $stmt->bindParam(":price", $_POST['price']);
     $stmt->execute();
     header('Location: admin.php');
@@ -45,19 +48,33 @@ if (isset($_POST['submit'])) {
 
         <form class="form" method="post">
             <div>
-                <label>Name</label>
+                <label>activities</label>
+                <div>
+                    <input type="text" name="activities" value="">
+                </div>
+            </div>
+            <div>
+                <label>image</label>
+                <div>
+                    <input type="text" name="image" value="">
+                </div>
+            </div>
+            <div>
+                <label>name</label>
                 <div>
                     <input type="text" name="name" value="">
                 </div>
             </div>
-            <div>
-                <label>Omschrijving</label>
+            <label>about</label>
                 <div>
-                    <input type="text" name="discription" value="">
+                    <input type="text" name="about" value="">
                 </div>
             </div>
-            <div>
-                <label>Prijs</label>
+            <label>more</label>
+                <div>
+                    <input type="text" name="more" value="">
+                </div>
+            </div><label>price</label>
                 <div>
                     <input type="text" name="price" value="">
                 </div>
