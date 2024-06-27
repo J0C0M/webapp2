@@ -19,7 +19,7 @@ include("include/connect.php");
 
     <div id="cookie-consent-banner" class="cookie-banner">
         <p>Wij gebruiken cookies om uw ervaring te verbeteren. Door onze site te gebruiken, gaat u akkoord met ons gebruik van cookies. <a href="cookie.php">Leer meer</a>.</p>
-        <button id="accept-cookies">Accept</button>
+        <button class="cookie-button" id="accept-cookies">Accept</button>
     </div>
 
     <script src="javascript/cookie.js"></script> 

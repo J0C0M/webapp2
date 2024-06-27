@@ -33,7 +33,23 @@ html,body{
     text-decoration: underline;
 }
 
-.cookie-banner button {
+.cookie-button {
+    width: 150px;
+    padding: 10px;
+    background-color: #00FFC2;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.cookie-button:hover {
+    background-color: #3AFFB8;
+}
+
+.cookie-banner .cookie-button {
+
     background-color: rgba(58, 255, 184, 1);
     color: white;
     border: none;
@@ -43,7 +59,7 @@ html,body{
     margin-right: 10%;
 }
 
-.cookie-banner button:hover {
+.cookie-banner .cookie-button:hover {
     background-color: #4CAF50;
 }
 
