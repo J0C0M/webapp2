@@ -1,23 +1,32 @@
-<?php
-include("conn.php");    
+<?php 
+
+include("conn.php");
 
 /** 
 * @var PDO $pdo 
 */
 
+$sql = "SELECT * FROM menukaart WHERE ID = :id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(":id", $_GET['id']);
+$stmt->execute();
+$result = $stmt->fetch();
+
 if (isset($_POST['submit'])) {
-    $sql = "INSERT INTO menukaart(name, discription, price) VALUES (:name, :discription, :price)";
+    $sql = "UPDATE menukaart SET name = :name, discription = :discription, price = :price WHERE ID = :id";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(":name", $_POST['name']);
+    $stmt->bindParam(":id", $_GET['id']);
+    $stmt->bindParam(":name", $_POST['name']); 
     $stmt->bindParam(":discription", $_POST['discription']);
     $stmt->bindParam(":price", $_POST['price']);
     $stmt->execute();
     header('Location: admin.php');
     exit;
 }
-?>
 
+
+?>
 
 
 <!DOCTYPE html>
@@ -25,12 +34,12 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
+    <title>da shop</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <div class="container my-5">
-        <h2>New Item</h2>
+        <h2>Edit Item</h2>
 
         <?php 
         if ( !empty($errorMessage)) {
@@ -47,19 +56,19 @@ if (isset($_POST['submit'])) {
             <div>
                 <label>Name</label>
                 <div>
-                    <input type="text" name="name" value="">
+                    <input type="text" name="name" value="<?php echo $result['name']; ?>">
                 </div>
             </div>
             <div>
                 <label>Omschrijving</label>
                 <div>
-                    <input type="text" name="discription" value="">
+                    <input type="text" name="discription" value="<?php echo $result['discription']; ?>">
                 </div>
             </div>
             <div>
                 <label>Prijs</label>
                 <div>
-                    <input type="text" name="price" value="">
+                    <input type="text" name="price" value="<?php echo $result['price']; ?>">
                 </div>
             </div>
 
