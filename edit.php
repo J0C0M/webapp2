@@ -1,26 +1,32 @@
-<?php
-include("include/connect.php");    
+<?php 
+
+include("conn.php");
 
 /** 
 * @var PDO $pdo 
 */
 
+$sql = "SELECT * FROM menukaart WHERE ID = :id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(":id", $_GET['id']);
+$stmt->execute();
+$result = $stmt->fetch();
+
 if (isset($_POST['submit'])) {
-    $sql = "INSERT INTO vakantie(activities, image, name, about, more, price) VALUES (:activities, :image, :name, :about, : more, :price)";
+    $sql = "UPDATE menukaart SET name = :name, discription = :discription, price = :price WHERE ID = :id";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(":activities", $_POST['activities']);
-    $stmt->bindParam(":image", $_POST['image']);
-    $stmt->bindParam(":name", $_POST['name']);
-    $stmt->bindParam(":about", $_POST['about']);
-    $stmt->bindParam(":more", $_POST['more']);
+    $stmt->bindParam(":id", $_GET['id']);
+    $stmt->bindParam(":name", $_POST['name']); 
+    $stmt->bindParam(":discription", $_POST['discription']);
     $stmt->bindParam(":price", $_POST['price']);
     $stmt->execute();
     header('Location: admin.php');
     exit;
 }
-?>
 
+
+?>
 
 
 <!DOCTYPE html>
@@ -28,12 +34,12 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
+    <title>da shop</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <div class="container my-5">
-        <h2>New Item</h2>
+        <h2>Edit Item</h2>
 
         <?php 
         if ( !empty($errorMessage)) {
@@ -48,35 +54,21 @@ if (isset($_POST['submit'])) {
 
         <form class="form" method="post">
             <div>
-                <label>activities</label>
+                <label>Name</label>
                 <div>
-                    <input type="text" name="activities" value="">
+                    <input type="text" name="name" value="<?php echo $result['name']; ?>">
                 </div>
             </div>
             <div>
-                <label>image</label>
+                <label>Omschrijving</label>
                 <div>
-                    <input type="text" name="image" value="">
+                    <input type="text" name="discription" value="<?php echo $result['discription']; ?>">
                 </div>
             </div>
             <div>
-                <label>name</label>
+                <label>Prijs</label>
                 <div>
-                    <input type="text" name="name" value="">
-                </div>
-            </div>
-            <label>about</label>
-                <div>
-                    <input type="text" name="about" value="">
-                </div>
-            </div>
-            <label>more</label>
-                <div>
-                    <input type="text" name="more" value="">
-                </div>
-            </div><label>price</label>
-                <div>
-                    <input type="text" name="price" value="">
+                    <input type="text" name="price" value="<?php echo $result['price']; ?>">
                 </div>
             </div>
 
