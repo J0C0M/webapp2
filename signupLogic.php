@@ -35,14 +35,14 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
 }
 
 // zorgt ervoor dat je wachtwoord in de database random generated nummers en cijfers wordt
-$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO user (name, email, password_hash)
-        VALUES (:name, :email, :password_hash)";
+$sql = "INSERT INTO user (name, email, password)
+        VALUES (:name, :email, :password)";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(":name", $_POST['name']);
 $stmt->bindParam(":email", $_POST['email']);
-$stmt->bindParam(":password_hash", $_POST['password']);
+$stmt->bindParam(":password", $_POST['password']);
 
 $stmt->execute();
 header("Location: login.php");

@@ -1,19 +1,26 @@
-<!-- <?php
-require "include/connect.php"
-?>
-
 <?php
+require "include/connect.php";
 session_start();
+
+?>
+<?php
 if (isset($_POST['login'])) {
     if (empty($_POST["name"]) || empty($_POST["password"])) {
         $message = '<label>Je moet iets invullen</label>';
     } else {
-   $query = "SELECT * FROM user WHERE name = :name AND password = :password_hash";
-   $statement = $connect->prepare($query);
-   
+        $query = "SELECT * FROM user WHERE name = :name AND password = :password";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(":name", $_POST['name']);
+        $stmt->bindParam(":password", $_POST['password']);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        if ($user) {
+        $_SESSION['user'] = $user['name'];
+        header("Location: accountTest.php");
+        }
+    }
 }
-}
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,12 +46,12 @@ if (isset($_POST['login'])) {
                     Welkom!
                 </p>
             </div>
-            <form name="login-form" action="account.php" method="post" class="login-form">
+            <form name="login-form" action="login.php" method="post" class="login-form">
                 <input type="text" id="name" name="name" class="login-name-box" placeholder="Naam">
                 <input type="password" id="password" name="password" class="login-password-box" placeholder="Wachtwoord">
                 <div class="login-button-box">
                     <a class="login-signup-button" href="signup.php">Sign up</a>
-                    <button type="submit" value="login" class="login-submit-button">Log in</button>
+                    <button value="submit" type="submit" name="login" class="login-submit-button">Log in</button>
                 </div>
             </form>
         </div>
