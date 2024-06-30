@@ -256,6 +256,7 @@ ul.menu {
   border-radius: 10px;
   font-family: "Poetsen One", sans-serif;
 }
+
 .btn:hover{
   background-color: #00FFC2;
 }
@@ -433,6 +434,7 @@ align-content: stretch;
 
 /**************************************************************************************************************/
 /*review css*/
+
 .progress-label-left
 {
     float: left;

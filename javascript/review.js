@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
 	var rating_data = 0;
@@ -69,7 +70,7 @@ $(document).ready(function(){
         else
         {
             $.ajax({
-                url:"submit_rating.php",
+                url:"submitRating.php",
                 method:"POST",
                 data:{rating_data:rating_data, user_name:user_name, user_review:user_review},
                 success:function(data)
@@ -90,7 +91,7 @@ $(document).ready(function(){
     function load_rating_data()
     {
         $.ajax({
-            url:"submit_rating.php",
+            url:"submitRating.php",
             method:"POST",
             data:{action:'load_data'},
             dataType:"JSON",
@@ -186,6 +187,3 @@ $(document).ready(function(){
     }
 
 });
-
-
-

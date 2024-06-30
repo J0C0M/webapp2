@@ -13,9 +13,9 @@
 </head>
 <body>
     <div class="container">
-    	<h1 class="mt-5 mb-5">Review & Rating System in PHP & Mysql using Ajax</h1>
+    	<h1 class="mt-5 mb-5"></h1>
     	<div class="card">
-    		<div class="card-header">Sample Product</div>
+    		<div class="card-header">Epic Vacations reviews</div>
     		<div class="card-body">
     			<div class="row">
     				<div class="col-sm-4 text-center">
@@ -74,123 +74,14 @@
                         </p>
     				</div>
     				<div class="col-sm-4 text-center">
-    					<h3 class="mt-4 mb-3">Write Review Here</h3>
-    					<button type="button" name="add_review" id="add_review" class="btn btn-primary">Review</button>
+    					<h3 class="mt-4 mb-3">Schrijf je review hier</h3>
+    					<button type="button" name="add_review" id="add_review" class="btn-primary">Review</button>
     				</div>
     			</div>
     		</div>
     	</div>
     	<div class="mt-5" id="review_content"></div>
     </div>
-    <?php
-
-    include("include/connect.php"); 
-
-
-    //submit_rating.php
-
-
-    if(isset($_POST["rating_data"]))
-    {
-
-        $data = array(
-            ':user_name'		=>	$_POST["user_name"],
-            ':user_rating'		=>	$_POST["rating_data"],
-            ':user_review'		=>	$_POST["user_review"],
-            ':datetime'			=>	time()
-        );
-
-        $query = "
-        INSERT INTO review_table 
-        (user_name, user_rating, user_review, datetime) 
-        VALUES (:user_name, :user_rating, :user_review, :datetime)
-        ";
-
-        $statement = $connect->prepare($query);
-
-        $statement->execute($data);
-
-        echo "Your Review & Rating Successfully Submitted";
-
-    }
-
-    if(isset($_POST["action"]))
-    {
-        $average_rating = 0;
-        $total_review = 0;
-        $five_star_review = 0;
-        $four_star_review = 0;
-        $three_star_review = 0;
-        $two_star_review = 0;
-        $one_star_review = 0;
-        $total_user_rating = 0;
-        $review_content = array();
-
-        $query = "
-        SELECT * FROM review_table 
-        ORDER BY review_id DESC
-        ";
-
-        $result = $connect->query($query, PDO::FETCH_ASSOC);
-
-        foreach($result as $row)
-        {
-            $review_content[] = array(
-                'user_name'		=>	$row["user_name"],
-                'user_review'	=>	$row["user_review"],
-                'rating'		=>	$row["user_rating"],
-                'datetime'		=>	date('l jS, F Y h:i:s A', $row["datetime"])
-            );
-
-            if($row["user_rating"] == '5')
-            {
-                $five_star_review++;
-            }
-
-            if($row["user_rating"] == '4')
-            {
-                $four_star_review++;
-            }
-
-            if($row["user_rating"] == '3')
-            {
-                $three_star_review++;
-            }
-
-            if($row["user_rating"] == '2')
-            {
-                $two_star_review++;
-            }
-
-            if($row["user_rating"] == '1')
-            {
-                $one_star_review++;
-            }
-
-            $total_review++;
-
-            $total_user_rating = $total_user_rating + $row["user_rating"];
-
-        }
-
-        $average_rating = $total_user_rating / $total_review;
-
-        $output = array(
-            'average_rating'	=>	number_format($average_rating, 1),
-            'total_review'		=>	$total_review,
-            'five_star_review'	=>	$five_star_review,
-            'four_star_review'	=>	$four_star_review,
-            'three_star_review'	=>	$three_star_review,
-            'two_star_review'	=>	$two_star_review,
-            'one_star_review'	=>	$one_star_review,
-            'review_data'		=>	$review_content
-        );
-
-        echo json_encode($output);
-
-    }
-
-?>
 </body>
 </html>
 
@@ -198,7 +89,7 @@
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
 	      	<div class="modal-header">
-	        	<h5 class="modal-title">Submit Review</h5>
+	        	<h5 class="modal-title">Submit de review</h5>
 	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          		<span aria-hidden="true">&times;</span>
 	        	</button>
@@ -218,14 +109,202 @@
 	        		<textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
 	        	</div>
 	        	<div class="form-group text-center mt-4">
-	        		<button type="button" class="btn btn-primary" id="save_review">Submit</button>
+	        		<button type="button" class="btn-primary" id="save_review">Submit</button>
 	        	</div>
 	      	</div>
     	</div>
   	</div>
 </div>
 
+<script>
 
+$(document).ready(function(){
 
+	var rating_data = 0;
 
-<script src="javascript/review.js"></script> 
+    $('#add_review').click(function(){
+
+        $('#review_modal').modal('show');
+
+    });
+
+    $(document).on('mouseenter', '.submit_star', function(){
+
+        var rating = $(this).data('rating');
+
+        reset_background();
+
+        for(var count = 1; count <= rating; count++)
+        {
+
+            $('#submit_star_'+count).addClass('text-warning');
+
+        }
+
+    });
+
+    function reset_background()
+    {
+        for(var count = 1; count <= 5; count++)
+        {
+
+            $('#submit_star_'+count).addClass('star-light');
+
+            $('#submit_star_'+count).removeClass('text-warning');
+
+        }
+    }
+
+    $(document).on('mouseleave', '.submit_star', function(){
+
+        reset_background();
+
+        for(var count = 1; count <= rating_data; count++)
+        {
+
+            $('#submit_star_'+count).removeClass('star-light');
+
+            $('#submit_star_'+count).addClass('text-warning');
+        }
+
+    });
+
+    $(document).on('click', '.submit_star', function(){
+
+        rating_data = $(this).data('rating');
+
+    });
+
+    $('#save_review').click(function(){
+
+        var user_name = $('#user_name').val();
+
+        var user_review = $('#user_review').val();
+
+        if(user_name == '' || user_review == '')
+        {
+            alert("Please Fill Both Field");
+            return false;
+        }
+        else
+        {
+            $.ajax({
+                url:"submitRating.php",
+                method:"POST",
+                data:{rating_data:rating_data, user_name:user_name, user_review:user_review},
+                success:function(data)
+                {
+                    $('#review_modal').modal('hide');
+
+                    load_rating_data();
+
+                    alert(data);
+                }
+            })
+        }
+
+    });
+
+    load_rating_data();
+
+    function load_rating_data()
+    {
+        $.ajax({
+            url:"submitRating.php",
+            method:"POST",
+            data:{action:'load_data'},
+            dataType:"JSON",
+            success:function(data)
+            {
+                $('#average_rating').text(data.average_rating);
+                $('#total_review').text(data.total_review);
+
+                var count_star = 0;
+
+                $('.main_star').each(function(){
+                    count_star++;
+                    if(Math.ceil(data.average_rating) >= count_star)
+                    {
+                        $(this).addClass('text-warning');
+                        $(this).addClass('star-light');
+                    }
+                });
+
+                $('#total_five_star_review').text(data.five_star_review);
+
+                $('#total_four_star_review').text(data.four_star_review);
+
+                $('#total_three_star_review').text(data.three_star_review);
+
+                $('#total_two_star_review').text(data.two_star_review);
+
+                $('#total_one_star_review').text(data.one_star_review);
+
+                $('#five_star_progress').css('width', (data.five_star_review/data.total_review) * 100 + '%');
+
+                $('#four_star_progress').css('width', (data.four_star_review/data.total_review) * 100 + '%');
+
+                $('#three_star_progress').css('width', (data.three_star_review/data.total_review) * 100 + '%');
+
+                $('#two_star_progress').css('width', (data.two_star_review/data.total_review) * 100 + '%');
+
+                $('#one_star_progress').css('width', (data.one_star_review/data.total_review) * 100 + '%');
+
+                if(data.review_data.length > 0)
+                {
+                    var html = '';
+
+                    for(var count = 0; count < data.review_data.length; count++)
+                    {
+                        html += '<div class="row mb-3">';
+
+                        html += '<div class="col-sm-1"><div class="rounded-circle bg-danger text-white pt-2 pb-2"><h3 class="text-center">'+data.review_data[count].user_name.charAt(0)+'</h3></div></div>';
+
+                        html += '<div class="col-sm-11">';
+
+                        html += '<div class="card">';
+
+                        html += '<div class="card-header"><b>'+data.review_data[count].user_name+'</b></div>';
+
+                        html += '<div class="card-body">';
+
+                        for(var star = 1; star <= 5; star++)
+                        {
+                            var class_name = '';
+
+                            if(data.review_data[count].rating >= star)
+                            {
+                                class_name = 'text-warning';
+                            }
+                            else
+                            {
+                                class_name = 'star-light';
+                            }
+
+                            html += '<i class="fas fa-star '+class_name+' mr-1"></i>';
+                        }
+
+                        html += '<br />';
+
+                        html += data.review_data[count].user_review;
+
+                        html += '</div>';
+
+                        html += '<div class="card-footer text-right">On '+data.review_data[count].datetime+'</div>';
+
+                        html += '</div>';
+
+                        html += '</div>';
+
+                        html += '</div>';
+                    }
+
+                    $('#review_content').html(html);
+                }
+            }
+        })
+    }
+
+});
+
+</script>
