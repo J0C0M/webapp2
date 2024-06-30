@@ -431,6 +431,25 @@ align-content: stretch;
   height: 60px;
 }
 
+/**************************************************************************************************************/
+/*review css*/
+.progress-label-left
+{
+    float: left;
+    margin-right: 0.5em;
+    line-height: 1em;
+}
+.progress-label-right
+{
+    float: right;
+    margin-left: 0.3em;
+    line-height: 1em;
+}
+.star-light
+{
+	color:#e9ecef;
+}
+
 /*==========================Responsive=============================*/
 @media all and (max-width: 1172px) {
   .banner-text-item .form {
