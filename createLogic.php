@@ -39,7 +39,7 @@ while($boeken = $result->fetch()) {
          "<img src='" . htmlspecialchars($boeken["image"]) . "' alt='Image'>" . 
          htmlspecialchars($boeken["name"]) . 
          htmlspecialchars($boeken["about"]) . 
-         htmlspecialchars($boeken["more"]) . 
+         htmlspecialchars($boeken["book"]) . 
          htmlspecialchars($boeken["price"]) . 
          "</div>";
 }
