@@ -221,7 +221,7 @@ ul.menu {
   width: 100%;
   padding: 1.2rem 1.4rem;
   font-size: 1.6rem;
-  color: var(--light-black);
+  color: var(--black);
   text-transform: none;
   margin-top: 1.5rem;
   border: var(--border);
@@ -238,7 +238,7 @@ ul.menu {
 
 .booking .book-form .flex .inputbox span{
   font-size: 1.5rem;
-  color: var(--light-black);
+  color: var(--black);
 }
 
 .booking .book-form .btn{
@@ -249,12 +249,14 @@ ul.menu {
   display: inline-block;
   background: var(--black);
   margin-top: 1rem;
-  color: var(--white);
+  color: var(--black);
   font-size: 1.7rem;
   padding: 1rem 3rem;
   cursor: pointer;
   border-radius: 10px;
   font-family: "Poetsen One", sans-serif;
+  border-color: #000000;
+  border-width: 3px;
 }
 
 .btn:hover{
@@ -269,7 +271,7 @@ ul.menu {
   color: #00FFC2;
   font-family: "Poetsen One", sans-serif;
   animation: fadeIn .6s linear backwards .6s;
-  -webkit-text-stroke: rgba(0, 0, 0, 0.515) 0.5px;
+  -webkit-text-stroke: rgba(0, 0, 0, 0.515) 3px;
 }
 
 @keyframes fadeIn {
@@ -662,30 +664,30 @@ align-content: stretch;
 }
 
 .boeken {
-  width: 350px; /* Set a fixed width for the container */
-  margin: 0 10px 20px; /* Add margin around each booking block */
+  width: 350px; 
+  margin: 0 10px 20px; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align all child elements */
-  border: 2px solid #000000; /* Optional: Add border for better visualization */
-  border-radius: 10px; /* Add border radius */
-  padding: 10px; /* Optional: Add padding for better visualization */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add shadow for better visualization */
-  text-align: center; /* Center align text */
+  align-items: center; 
+  border: 2px solid #000000; 
+  border-radius: 10px; 
+  padding: 10px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  text-align: center; 
   background-color: #00ffc376;
   height: 100%;
 }
 
 .book-image {
-  width: 100%; /* Ensure the image takes the full width of the container */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 10px; /* Add some spacing below the image */
-  border-radius: 10px; /* Add border radius to the image */
+  width: 100%; 
+  height: auto; 
+  margin-bottom: 10px; 
+  border-radius: 10px; 
 }
 
 .book {
-  background-color: #E3F2FD; /* Background color for price */
-  color: black; /* Text color for contrast */
+  background-color: #E3F2FD; 
+  color: black;
   width: 50%;
   margin-bottom: 10px;
   border-radius: 20px;
