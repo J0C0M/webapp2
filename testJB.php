@@ -1,88 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+    <title>Review & Rating System in PHP & Mysql using Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/style.css">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vakantie Pagina</title>
 </head>
-
 <body>
-
-    <body>
-
-        <?php
-            //header include
-            include("include/header.php");
-        ?>
-        
-        <!--===============Banner================-->
-    <video autoplay muted loop class="banner-video">
-        <source src="images/mixkit-bright-orange-sunset-on-beach-2168-full-hd.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-
-        <!--===== Booking =====-->
-    <section class = "booking">
-
-        <h1 class = "heading-title">Find your Next tour!</h1>
-
-        <form action="book_form.php" method="post" class = "book-form">
-
-        <div class = "flex">
-            <div class = "inputbox">
-                <span>Name :</span>
-                <input class = "input" type="text" placeholder = "Enter your name" name = "name">
-            </div>
-            <div class = "inputbox">
-                <span>Email :</span>
-                <input class = "input" type="email" placeholder = "Enter your email" name = "email">
-            </div>
-            <div class = "inputbox">
-                <span>Phone number :</span>
-                <input class = "input" type="number" placeholder = "Enter your phone number" name = "phone_number">
-            </div>
-            <div class = "inputbox">
-                <span>Address :</span>
-                <input class = "input" type="text" placeholder = "Enter your address" name = "address">
-            </div>
-            <div class = "inputbox">
-                <span>Where to :</span>
-                <input class = "input" type="text" placeholder = "Enter your destenation" name = "destenation">
-            </div>
-            <div class = "inputbox">
-                <span>How many :</span>
-                <input class = "input" type="number" placeholder = "Enter how many guests" name = "guests">
-            </div>
-            <div class = "inputbox">
-                <span>Arrivals :</span>
-                <input class = "input" type="date" name = "arrivals">
-            </div>
-            <div class = "inputbox">
-                <span>Leaving :</span>
-                <input class = "input" type="date" name = "leaving">
-            </div>
-        </div>
-
-        <input type="Submit" value = "Submit" class = "btn" name = "send">
-
-        </form>
-
-    </section>
-
-   
-        
     <div class="container">
     	<h1 class="mt-5 mb-5"></h1>
     	<div class="card">
@@ -146,18 +75,13 @@
     				</div>
     				<div class="col-sm-4 text-center">
     					<h3 class="mt-4 mb-3">Schrijf je review hier</h3>
-    					<button type="button" name="add_review" id="add_review" class="btn btn-primary">Review</button>
+    					<button type="button" name="add_review" id="add_review" class="btn-primary">Review</button>
     				</div>
     			</div>
     		</div>
     	</div>
     	<div class="mt-5" id="review_content"></div>
     </div>
-
-    <?php
-        //include footer
-        include("include/footer.php");
-        ?>
 </body>
 </html>
 
@@ -185,7 +109,7 @@
 	        		<textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
 	        	</div>
 	        	<div class="form-group text-center mt-4">
-	        		<button type="button" class="btn btn-primary" id="save_review">Submit</button>
+	        		<button type="button" class="btn-primary" id="save_review">Submit</button>
 	        	</div>
 	      	</div>
     	</div>
