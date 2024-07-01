@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php
 require "include/connect.php";
 session_start();
@@ -5,21 +6,29 @@ session_start();
 ?>
 <?php
 if (isset($_POST['login'])) {
-    if (empty($_POST["name"]) || empty($_POST["password"])) {
-        $message = '<label>Je moet iets invullen</label>';
-    } else {
-        $query = "SELECT * FROM user WHERE name = :name AND password = :password";
+    if (empty($_POST["email"]) || empty($_POST["password"])) {
+        die("Er moet iets ingevuld worden.");           
+        } else {
+        $query = "SELECT * FROM user WHERE email = :email AND password = :password";
         $stmt = $pdo->prepare($query);
-        $stmt->bindParam(":name", $_POST['name']);
+        $stmt->bindParam(":email", $_POST['email']);
         $stmt->bindParam(":password", $_POST['password']);
         $stmt->execute();
         $user = $stmt->fetch();
         if ($user) {
-        $_SESSION['user'] = $user['name'];
-        header("Location: accountTest.php");
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['admin'] = $user['admin'];
+        }
+        if ($user['admin'] == '0') {
+            header("Location: account.php");
+        }
+
+        if ($user['admin'] == '1') {
+            header("Location: admin.php");
         }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +56,7 @@ if (isset($_POST['login'])) {
                 </p>
             </div>
             <form name="login-form" action="login.php" method="post" class="login-form">
-                <input type="text" id="name" name="name" class="login-name-box" placeholder="Naam">
+                <input type="email" id="email" name="email" class="login-name-box" placeholder="email">
                 <input type="password" id="password" name="password" class="login-password-box" placeholder="Wachtwoord">
                 <div class="login-button-box">
                     <a class="login-signup-button" href="signup.php">Sign up</a>
