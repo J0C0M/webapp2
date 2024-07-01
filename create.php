@@ -6,14 +6,14 @@ include("include/connect.php");
 */
 
 if (isset($_POST['submit'])) {
-    $sql = "INSERT INTO vakantie(activities, image, name, about, more, price) VALUES (:activities, :image, :name, :about, : more, :price)";
+    $sql = "INSERT INTO vakantie(activities, image, name, about, book, price) VALUES (:activities, :image, :name, :about, : book, :price)";
 
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":activities", $_POST['activities']);
     $stmt->bindParam(":image", $_POST['image']);
     $stmt->bindParam(":name", $_POST['name']);
     $stmt->bindParam(":about", $_POST['about']);
-    $stmt->bindParam(":more", $_POST['more']);
+    $stmt->bindParam(":book", $_POST['book']);
     $stmt->bindParam(":price", $_POST['price']);
     $stmt->execute();
     header('Location: admin.php');
@@ -70,9 +70,9 @@ if (isset($_POST['submit'])) {
                     <input type="text" name="about" value="">
                 </div>
             </div>
-            <label>more</label>
+            <label>book</label>
                 <div>
-                    <input type="text" name="more" value="">
+                    <input type="text" name="book" value="">
                 </div>
             </div><label>price</label>
                 <div>
