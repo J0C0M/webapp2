@@ -1,18 +1,8 @@
-<?php
-session_start();
-if (isset($_SESSION['admin']) && $_SESSION['admin'] === 1) {
-}
-else {
-    header("Location: login.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/webapp2.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -24,11 +14,52 @@ else {
     include("include/header.php");
     ?>
     <h1>Admin pagina</h1>
-    <a href="index.php">Link naar home pag</a>
+    <p>reviews</p>
+    <?php
+include("include/connect.php"); 
+
+// Fetch all reviews
+$query = "SELECT * FROM review_table ORDER BY review_id DESC";
+$result = $pdo->query($query, PDO::FETCH_ASSOC);
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Rating</th>
+                <th>Review</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($result as $review):
+            ?>
+            <tr>
+                <td><?php echo $review["review_id"]; ?></td>
+                <td><?php echo $review["user_name"]; ?></td>
+                <td><?php echo $review["user_rating"]; ?></td>
+                <td><?php echo $review["user_review"]; ?></td>
+                <td><?php echo date('l jS, F Y h:i:s A', $review["datetime"]); ?></td>
+                <td>
+                    <a href="editReview.php?id=<?php echo $review["review_id"]; ?>">Edit</a> | 
+                    <a href="deleteReview.php?id=<?php echo $review["review_id"]; ?>" onclick="return confirm('Weet je zeker dat je dit wil verweideren?')">Delete</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
     <h2>List Of Menu Items</h2>
     <a class="btn" href="create.php" role="button">New Item</a>
     <br>
-    <table class="table">
+    <table border="1" class="table">
         <thead>
             <tr>
                 <th>ID</th>
