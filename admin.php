@@ -18,14 +18,11 @@
     <?php
     include("include/connect.php"); 
 
-// Fetch all reviews
-$query = "SELECT * FROM review_table ORDER BY review_id DESC";
-$result = $pdo->query($query, PDO::FETCH_ASSOC);
-?>
+    // Fetch all reviews
+    $query = "SELECT * FROM review_table ORDER BY review_id DESC";
+    $result = $pdo->query($query, PDO::FETCH_ASSOC);
+    ?>
 
-<!DOCTYPE html>
-<html>
-<head>
     <title>Admin Panel</title>
     <table border="1">
         <thead>
