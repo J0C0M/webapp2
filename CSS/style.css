@@ -653,3 +653,80 @@ align-content: stretch;
     align-items: center;
   }
 }
+/*booking*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.boeken {
+  width: 350px; /* Set a fixed width for the container */
+  margin: 0 10px 20px; /* Add margin around each booking block */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align all child elements */
+  border: 2px solid #000000; /* Optional: Add border for better visualization */
+  border-radius: 10px; /* Add border radius */
+  padding: 10px; /* Optional: Add padding for better visualization */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add shadow for better visualization */
+  text-align: center; /* Center align text */
+  background-color: #00ffc376;
+  height: 100%;
+}
+
+.book-image {
+  width: 100%; /* Ensure the image takes the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Add some spacing below the image */
+  border-radius: 10px; /* Add border radius to the image */
+}
+
+.book {
+  background-color: #E3F2FD; /* Background color for price */
+  color: black; /* Text color for contrast */
+  width: 50%;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price {
+  background-color: #DB5461;
+  width: 40%;
+  border-radius: 20px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  font-family: "Poetsen One", sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.activities {
+  font-family: "Poetsen One", sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.about {
+  background-color: #E3F2FD;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

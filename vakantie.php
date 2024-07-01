@@ -81,7 +81,51 @@
 
     </section>
 
-   
+    <div class="container">
+  <?php
+  $host = 'mysql_db';
+  $db = 'vakantie';
+  $user = 'root';
+  $pass = 'rootpassword';
+  $charset = 'utf8mb4';
+
+  $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+  $options = [
+      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+      PDO::ATTR_EMULATE_PREPARES => false,
+  ];
+
+  try {
+      $pdo = new PDO($dsn, $user, $pass, $options);
+  } catch (\PDOException $e) {
+      echo "Connection failed: " . $e->getMessage();
+      exit;
+  }
+
+  $sql = "SELECT * FROM boeken";
+  $result = $pdo->query($sql);
+
+  while ($boeken = $result->fetch()) {
+      $image = htmlspecialchars($boeken["image"]);
+      $activities = htmlspecialchars($boeken["activities"]);
+      $name = htmlspecialchars($boeken["name"]);
+      $about = htmlspecialchars($boeken["about"]);
+      $book = htmlspecialchars($boeken["book"]);
+      $price = htmlspecialchars($boeken["price"]);
+
+      echo "<div class='boeken'>" .
+          "<div class='activities'>$activities</div>" .
+          "<img src='$image' alt='Image' class='book-image'>" .
+          "<div class='name'>$name</div>" .
+          "<div class='about'>$about</div>" .
+          "<div class='book'>$book</div>" .
+          "<div class='price'>$price</div>" .
+          "</div>";
+  }
+  ?>
+</div>
         
     <div class="container">
     	<h1 class="mt-5 mb-5"></h1>
