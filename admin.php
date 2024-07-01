@@ -16,16 +16,13 @@
     <h1>Admin pagina</h1>
     <p>reviews</p>
     <?php
-include("include/connect.php"); 
+    include("include/connect.php"); 
 
-// Fetch all reviews
-$query = "SELECT * FROM review_table ORDER BY review_id DESC";
-$result = $pdo->query($query, PDO::FETCH_ASSOC);
-?>
+    // Fetch all reviews
+    $query = "SELECT * FROM review_table ORDER BY review_id DESC";
+    $result = $pdo->query($query, PDO::FETCH_ASSOC);
+    ?>
 
-<!DOCTYPE html>
-<html>
-<head>
     <title>Admin Panel</title>
     <table border="1">
         <thead>
@@ -48,8 +45,12 @@ $result = $pdo->query($query, PDO::FETCH_ASSOC);
                 <td><?php echo $review["user_review"]; ?></td>
                 <td><?php echo date('l jS, F Y h:i:s A', $review["datetime"]); ?></td>
                 <td>
-                    <a href="editReview.php?id=<?php echo $review["review_id"]; ?>">Edit</a> | 
-                    <a href="deleteReview.php?id=<?php echo $review["review_id"]; ?>" onclick="return confirm('Weet je zeker dat je dit wil verweideren?')">Delete</a>
+                    <?php
+                    echo "
+                    <a class='btn' href='editReview.php?id=$review[review_id]'>Edit</a>
+                    <a class='btn' href='deleteReview.php?id=$review[review_id]'>Delete</a>
+                    ";
+                    ?>
                 </td>
             </tr>
             <?php endforeach; ?>

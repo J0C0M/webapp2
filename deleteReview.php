@@ -11,14 +11,6 @@ if(isset($_GET["id"])) {
 
     header("Location: admin.php");
 }
-?>
-Update submit_rating.php:
-
-Ensure the submit_rating.php includes proper handling of CRUD operations.
-
-php
-Code kopiëren
-<?php
 
 include("include/connect.php"); 
 
