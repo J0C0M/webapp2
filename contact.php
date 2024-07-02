@@ -11,11 +11,37 @@
     <?php
     //header include
     include("include/header.php");
+    include("include/connect.php");
+
+    // dit is te vaak gebeurd
+    if (!($pdo instanceof mysqli)) {
+        die("kan niet connecten naar database.");
+    }
+
+    // contact php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = htmlspecialchars($_POST["name"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $message = htmlspecialchars($_POST["message"]);
+
+        $stmt = $pdo->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $name, $email, $message);
+
+        if ($stmt->execute()) {
+            echo "<div class='success'>New contact submission has been sent!</div>";
+        } else {
+            echo "<div class='error'>Error: " . $stmt->error . "</div>";
+        }
+
+        $stmt->close();
+    }
+
+    $conn->close();
     ?>
 
-    <div class="contact-container">
+<div class="contact-container">
         <h1 class="index-btn">Contact us</h1>
-        <form action="contact.php" method="post">
+        <form action="" method="post">
             <div class="form-group">
                 <label class="contact-text" for="name">Name</label>
                 <input type="text" id="name" name="name" required>
