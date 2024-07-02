@@ -1,5 +1,4 @@
 <?php
-
             $host = 'mysql_db';
             $db   = 'vakantie';
             $user = 'root';
@@ -14,5 +13,4 @@
             ];
 
             $pdo = new PDO ($dsn, $user, $pass, $options);
-
 ?>
