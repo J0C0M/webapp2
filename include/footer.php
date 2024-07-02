@@ -1,5 +1,4 @@
 <footer>
-
         <div class = "hold-footer">
         <div class = "social-media">social media</div>
         <div class = "hold-images">
@@ -14,5 +13,4 @@
             <a href="privacy.php" class = "privacy">privacy</a>
             <a href="ToS.php" class = "terms-of-service">terms of service</a>
         </div>
-        
 </footer>
