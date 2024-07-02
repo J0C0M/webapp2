@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (isset($_SESSION['admin']) && $_SESSION['admin'] === 1) {
-}
-else {
+    // User is an admin
+} else {
     header("Location: login.php");
+    exit;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -15,16 +15,16 @@ else {
     <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Page</title>
 </head>
 
 <body>
     <?php
-    //header include
+    // Include the header
     include("include/header.php");
     ?>
-    <h1>Admin pagina</h1>
-    <p>reviews</p>
+    <h1>Admin Page</h1>
+    <p>Reviews</p>
     <?php
     include("include/connect.php"); 
 
@@ -33,7 +33,6 @@ else {
     $result = $pdo->query($query, PDO::FETCH_ASSOC);
     ?>
 
-    <title>Admin Panel</title>
     <table border="1">
         <thead>
             <tr>
@@ -46,8 +45,7 @@ else {
             </tr>
         </thead>
         <tbody>
-            <?php foreach($result as $review):
-            ?>
+            <?php foreach ($result as $review): ?>
             <tr>
                 <td><?php echo $review["review_id"]; ?></td>
                 <td><?php echo $review["user_name"]; ?></td>
@@ -55,61 +53,58 @@ else {
                 <td><?php echo $review["user_review"]; ?></td>
                 <td><?php echo date('l jS, F Y h:i:s A', $review["datetime"]); ?></td>
                 <td>
-                    <?php
-                    echo "
-                    <a class='btn' href='editReview.php?id=$review[review_id]'>Edit</a>
-                    <a class='btn' href='deleteReview.php?id=$review[review_id]'>Delete</a>
-                    ";
-                    ?>
+                    <a class='btn' href='editReview.php?id=<?php echo $review["review_id"]; ?>'>Edit</a>
+                    <a class='btn' href='deleteReview.php?id=<?php echo $review["review_id"]; ?>'>Delete</a>
                 </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 
-    <h2>List Of Menu Items</h2>
+    <h2>List of Vacation Packages</h2>
     <a class="btn" href="create.php" role="button">New Item</a>
     <br>
     <table border="1" class="table">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Naam</th>
-                <th>Omschrijving</th>
-                <th>Prijs</th>
+                <th>Activities</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>About</th>
+                <th>Book</th>
+                <th>Price</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <?php
-
-            include("connect.php");
-
-            $sql = "SELECT * FROM menukaart";
+            // Fetch all vacation packages
+            $sql = "SELECT * FROM boeken";
             $stmt = $pdo->query($sql);
 
-            while($menukaart = $stmt->fetch()) {
+            while ($boeken = $stmt->fetch()) {
                 echo "  
-                <tr class='menukaart'>
-                    <td>$menukaart[id]</td>
-                    <td>$menukaart[name]</td>
-                    <td>$menukaart[discription] </td>
-                    <td>$menukaart[price]</td>
+                <tr class='boeken'>
+                    <td>{$boeken['id']}</td>
+                    <td>{$boeken['activities']}</td>
+                    <td><img src='{$boeken['image']}' alt='Image' style='width: 100px;'></td>
+                    <td>{$boeken['name']}</td>
+                    <td>{$boeken['about']}</td>
+                    <td>{$boeken['book']}</td>
+                    <td>{$boeken['price']}</td>
                     <td>
-                        <a class='btn' href='edit.php?id=$menukaart[id]'>Edit</a>
-                        <a class='btn' href='delete.php?id=$menukaart[id]'>Delete</a>
+                        <a class='btn' href='edit.php?id={$boeken['id']}'>Edit</a>
+                        <a class='btn' href='delete.php?id={$boeken['id']}'>Delete</a>
                     </td>
-                </tr>
-                ";
+                </tr>";
             }
             ?>
-            
         </tbody>
     </table>
     <?php
-    //include footer
+    // Include the footer
     include("include/footer.php");
     ?>
 </body>
-
-
 </html>
