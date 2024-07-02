@@ -1,7 +1,6 @@
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
-            echo $_SESSION['email'];
 } else {
     header(header: "Location: index.php");
 }
@@ -11,12 +10,18 @@ if (isset($_SESSION['email'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="CSS/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>account</title>
 </head>
+<?php include("include/header.php"); ?>
 <body>
-    
+<div class="top-container">
+        <a class="top-button" href="logout.php" Uitloggen>Uitloggen</a>
+    </div>
 </body>
+<?php include("include/footer.php"); ?>
+
 </html>
