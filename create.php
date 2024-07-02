@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <div class="container my-5">
-        <h2>New Item</h2>
+        <h2>New Destination</h2>
 
         <?php 
         if (!empty($errorMessage)) {
@@ -96,10 +96,10 @@ if (isset($_POST['submit'])) {
             }
             ?>
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                <a class="btn btn-secondary" href="admin.php" role="button">Cancel</a>
-            </div>
+                <div class="mb-3">
+                        <button type="submit" class="btn btn-primary" name="submit" style="background-color: #00FFC2; border-color: #00FFC2; color: #000;">Submit</button>
+                        <a class="btn btn-secondary" href="admin.php" role="button" style="background-color: #DB5461; border-color: #DB5461; color: #000;">Cancel</a>
+                </div>
         </form>
     </div>    
 </body>

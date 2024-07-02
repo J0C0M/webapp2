@@ -1,13 +1,26 @@
-<?php 
+<?php
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
 
-    include("conn.php");
+    // Ensure the connect.php file is included correctly
+    include("include/connect.php");
 
-    $sql = "DELETE FROM menukaart WHERE id=$id";
-    $pdo->query($sql);
-} 
+    try {
+        // Use prepared statements to delete the record securely
+        $sql = "DELETE FROM boeken WHERE id = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
 
-header("Location: admin.php");
-exit;
+        // Redirect to admin.php after deletion
+        header("Location: admin.php");
+        exit;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+} else {
+    // Redirect to admin.php if no ID is provided
+    header("Location: admin.php");
+    exit;
+}
 ?>
