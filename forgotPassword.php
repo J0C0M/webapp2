@@ -2,7 +2,6 @@
 <?php
 require "include/connect.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the email and new password from the form data
     $email = $_POST['email'];
     $newPassword = $_POST['password'];
 
