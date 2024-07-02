@@ -19,6 +19,10 @@ if (isset($_POST['login'])) {
             $_SESSION['email'] = $user['email'];
             $_SESSION['admin'] = $user['admin'];
         }
+
+        if ($user == false) {
+        die("Dit account bestaat niet!");
+        }
         if ($user['admin'] == '0') {
             header("Location: account.php");
         }

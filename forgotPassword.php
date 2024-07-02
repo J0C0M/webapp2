@@ -1,24 +1,26 @@
 <?php ob_start(); ?>
 <?php
 require "include/connect.php";
-session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve the email and new password from the form data
+    $email = $_POST['email'];
+    $newPassword = $_POST['password'];
 
-?>
-<?php
-if (isset($_POST['login'])) {
-    if (empty($_POST["email"])) {
-        die("Er moet iets ingevuld worden.");
+    $sql = "UPDATE user SET password = :password WHERE email = :email";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':password', $newPassword);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        die("Je wachtwoord is gereset!");
     } else {
-        $query = "SELECT * FROM user WHERE email = :email";
-        $stmt = $pdo->prepare($query);
-        $stmt->bindParam(":email", $_POST['email']); 
-        $stmt->execute();
-        $user = $stmt->fetch();
-        if ($user) {
-            $_SESSION['email'] = $user['email'];
-        }
+        die("Er bestaat geen account met deze email!");
     }
 }
+?>
+<?php
+
 ?>
 
 <!DOCTYPE html>
@@ -45,10 +47,11 @@ if (isset($_POST['login'])) {
                     Welkom!
                 </p>
             </div>
-            <form name="login-form" action="login.php" method="post" class="login-form">
+            <form name="login-form" action="forgotPassword.php" method="post" class="login-form">
                 <input type="email" id="email" name="email" class="login-name-box" placeholder="email">
+                <input type="password" id="password" name="password" class="login-name-box" placeholder="Nieuw wachtwoord">
                 <div class="login-button-box">
-                    <button value="submit" type="submit" name="login" class="login-submit-button">Log in</button>
+                    <button value="submit" type="submit" name="submit" class="login-submit-button">Log in</button>
                 </div>
             </form>
         </div>
