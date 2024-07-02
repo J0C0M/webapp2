@@ -18,9 +18,7 @@ if (isset($_SESSION['email'])) {
 </head>
 <?php include("include/header.php"); ?>
 <body>
-<div class="top-container">
-        <a class="top-button" href="logout.php" Uitloggen>Uitloggen</a>
-    </div>
+        <a href="logout.php" Uitloggen>Uitloggen</a>
 </body>
 <?php include("include/footer.php"); ?>
 
