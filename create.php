@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <div class="container my-5">
-        <h2>New Item</h2>
+        <h2>New Destination</h2>
 
         <?php 
         if (!empty($errorMessage)) {
