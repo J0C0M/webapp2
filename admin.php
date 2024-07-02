@@ -82,7 +82,7 @@ else {
         <tbody>
             <?php
 
-            include("conn.php");
+            include("connect.php");
 
             $sql = "SELECT * FROM menukaart";
             $stmt = $pdo->query($sql);
