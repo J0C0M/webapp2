@@ -11,11 +11,30 @@
     <?php
     //header include
     include("include/header.php");
+    include("include/connect.php");
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = htmlspecialchars($_POST["name"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $message = htmlspecialchars($_POST["message"]);
+
+        try {
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $pdo->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
+            if ($stmt->execute([$name, $email, $message])) {
+                } else {
+                echo "<div class='error'>Error: " . $stmt->errorInfo()[2] . "</div>";
+            }
+        } catch (PDOException $e) {
+            echo "<div class='error'>connectie is mislukt: " . $e->getMessage() . "</div>";
+        }
+    }
     ?>
 
     <div class="contact-container">
-        <h1 class="index-btn">Contact us</h1>
-        <form action="contact.php" method="post">
+        <h1 class="index-btn">Contact Us</h1>
+        <form action="" method="post">
             <div class="form-group">
                 <label class="contact-text" for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -28,7 +47,7 @@
                 <label class="contact-text" for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button class="btn" id="submit" type="submit">Submit</button>
         </form>
     </div>
 
