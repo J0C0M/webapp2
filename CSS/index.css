@@ -323,8 +323,9 @@ html,body{
 .login-button-box {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 80%;
     margin: 2%;
+    gap: 5%;
 }
 
 .login-forgot-password-button {
@@ -335,7 +336,7 @@ html,body{
     font-size: 150%;
     border: none;
     outline: none;
-    padding: 3% 10%;
+    padding: 3% 8%;
     border-radius: 30px;
 }
 
@@ -365,7 +366,8 @@ html,body{
 .signup-form-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 0%;
+    margin-top: -1%;
+    margin-bottom: -1%;
 } 
 
 .signup-form-box {
@@ -428,7 +430,9 @@ html,body{
     border: none;
     outline: none;
     padding: 3% 10%;
-    border-radius: 30px;
+    border-radius: 35px;
+    width: 85%;
+    margin-bottom: 5%;
 }
 
 /*****************************************************************************************************/
@@ -549,11 +553,12 @@ label {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea {
-    width: 100%;
-    padding: 10px;
+    width: 80%;
+    padding: 3%;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 30px;
     font-size: 16px;
     color: #333;
 }
