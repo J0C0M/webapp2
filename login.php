@@ -63,7 +63,7 @@ if (isset($_POST['login'])) {
                 <input type="email" id="email" name="email" class="login-name-box" placeholder="email">
                 <input type="password" id="password" name="password" class="login-password-box" placeholder="Wachtwoord">
                 <div class="login-button-box">
-                    <a class="login-forgot-password-button" href="forgotPassword.php">Wachtwoord vergeten</a>
+                    <a class="login-forgot-password-button" href="resetPassword.php">Wachtwoord vergeten</a>
                     <a class="login-signup-button" href="signup.php">Sign up</a>
                     <button value="submit" type="submit" name="login" class="login-submit-button">Log in</button>
                 </div>

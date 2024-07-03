@@ -75,10 +75,10 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === 1) {
             <tbody>
                 <?php foreach ($result as $review): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($review["review_id"]); ?></td>
-                    <td><?php echo htmlspecialchars($review["user_name"]); ?></td>
-                    <td><?php echo htmlspecialchars($review["user_rating"]); ?></td>
-                    <td><?php echo htmlspecialchars($review["user_review"]); ?></td>
+                    <td><?php echo ($review["review_id"]); ?></td>
+                    <td><?php echo ($review["user_name"]); ?></td>
+                    <td><?php echo ($review["user_rating"]); ?></td>
+                    <td><?php echo ($review["user_review"]); ?></td>
                     <td><?php echo date('l jS, F Y h:i:s A', $review["datetime"]); ?></td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='editReview.php?id=<?php echo $review["review_id"]; ?>'>Edit</a>
