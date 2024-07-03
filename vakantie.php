@@ -53,8 +53,11 @@
             <div class="inputbox">
                 <span>Where to :</span>
                 <select class="input" name="destination" required>
+                <div class="container">
                     <?php
-                    // Connect to the database (same as before)
+                    // Your PHP code to fetch and display books/vacations
+                    session_start();
+
                     $host = 'mysql_db';
                     $db = 'vakantie';
                     $user = 'root';
@@ -62,6 +65,7 @@
                     $charset = 'utf8mb4';
 
                     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
                     $options = [
                         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -75,14 +79,29 @@
                         exit;
                     }
 
-                    $sql = "SELECT DISTINCT name FROM boeken";
-                    $stmt = $pdo->query($sql);
+                    $sql = "SELECT * FROM boeken";
+                    $result = $pdo->query($sql);
 
-                    while ($row = $stmt->fetch()) {
-                        $activity = htmlspecialchars($row['name']);
-                        echo "<option value='$activity'>$activity</option>";
+                    while ($boeken = $result->fetch()) {
+                        $image = htmlspecialchars($boeken["image"]);
+                        $activities = htmlspecialchars($boeken["activities"]);
+                        $name = htmlspecialchars($boeken["name"]);
+                        $about = htmlspecialchars($boeken["about"]);
+                        $book = htmlspecialchars($boeken["book"]);
+                        $price = htmlspecialchars($boeken["price"]);
+
+                        // Output each vacation as a block
+                        echo "<div class='boeken'>" .
+                            "<div class='activities'>$activities</div>" .
+                            "<img src='$image' alt='Image' class='book-image'>" .
+                            "<div class='name'>$name</div>" .
+                            "<div class='about'>$about</div>" .
+                            "<button class='book-button' data-name='$name' data-about='$about' data-price='$price' data-toggle='modal' data-target='#bookingModal'>Book</button>" . // Button with data attributes
+                            "<div class='price'>$price</div>" .
+                            "</div>";
                     }
                     ?>
+    </div>
                 </select>
             </div>
             <div class="inputbox">
