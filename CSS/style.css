@@ -12,6 +12,12 @@ html {
   margin: 0;
   padding: 0;
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 /*header*/
 header {
   background-color: #8AA29E;

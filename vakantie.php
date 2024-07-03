@@ -150,7 +150,7 @@
   ?>
 </div>
         
-    <div class="container">
+    <div class="container column">
     	<h1 class="mt-5 mb-5"></h1>
     	<div class="card">
     		<div class="card-header">Epic Vacations reviews</div>
