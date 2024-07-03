@@ -102,8 +102,9 @@
     </form>
 </section>
 
-    <div class="container">
+<div class="container">
   <?php
+  // Your PHP code to fetch and display books/vacations
   $host = 'mysql_db';
   $db = 'vakantie';
   $user = 'root';
@@ -136,17 +137,70 @@
       $book = htmlspecialchars($boeken["book"]);
       $price = htmlspecialchars($boeken["price"]);
 
+      // Output each vacation as a block
       echo "<div class='boeken'>" .
           "<div class='activities'>$activities</div>" .
           "<img src='$image' alt='Image' class='book-image'>" .
           "<div class='name'>$name</div>" .
           "<div class='about'>$about</div>" .
-          "<div class='book'>$book</div>" .
+          "<button class='book-button' data-name='$name' data-about='$about' data-price='$price' data-toggle='modal' data-target='#bookingModal'>Book</button>" . // Button with data attributes
           "<div class='price'>$price</div>" .
           "</div>";
   }
   ?>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModalLabel">Book Vacation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Booking Form -->
+        <form action="book_form.php" method="post" class="book-form">
+    <input type="hidden" id="vacationName" name="vacationName">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+    </div>
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" name="address" required>
+    </div>
+    <div class="form-group">
+        <label for="guests">Number of Guests:</label>
+        <input type="number" class="form-control" id="guests" name="guests" required>
+    </div>
+    <div class="form-group">
+        <label for="arrivals">Arrival Date:</label>
+        <input type="date" class="form-control" id="arrivals" name="arrivals" required>
+    </div>
+    <div class="form-group">
+        <label for="leaving">Departure Date:</label>
+        <input type="date" class="form-control" id="leaving" name="leaving" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Booking</button>
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
         
     <div class="container column">
     	<h1 class="mt-5 mb-5"></h1>
@@ -449,3 +503,22 @@ $(document).ready(function(){
 });
 
 </script>
+<script>
+$(document).ready(function() {
+  // When a book button is clicked
+  $('.book-button').click(function() {
+    var name = $(this).data('name');
+    var about = $(this).data('about');
+    var price = $(this).data('price');
+
+    // Set modal inputs with vacation details
+    $('#vacationName').val(name);
+    $('#bookingModalLabel').text('Book ' + name); // Update modal title with vacation name
+
+    // Show the modal
+    $('#bookingModal').modal('show');
+  });
+});
+
+</script>
+
