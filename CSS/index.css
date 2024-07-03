@@ -242,7 +242,9 @@ html,body{
 
 /*****************************************************************************************************/
 
+
 /*login-page*/
+
 .login-form-container {
     display: flex;
     justify-content: center;
@@ -293,7 +295,7 @@ html,body{
     justify-content: center;
     align-items: center;
 }
-
+        
 .login-name-box {
     display: flex;
     margin-top: 5%;
@@ -357,7 +359,8 @@ html,body{
     padding: 3% 10%;
     border-radius: 30px;
 }
-/*****************************************************************************************************/
+
+
 /*signup-page*/
 .signup-form-container {
     display: flex;
