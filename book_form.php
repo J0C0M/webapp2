@@ -1,30 +1,31 @@
 <?php
-$servername = "mysql_db"; 
-$username = "root"; 
-$password = "rootpassword"; 
-$dbname = "book_db"; 
+$servername = "mysql_db";
+$username = "root";
+$password = "rootpassword";
+$dbname = "book_db";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $phone_number = $_POST['phone_number'];
-        $address = $_POST['address'];
-        $destination = $_POST['destenation'];
-        $guests = $_POST['guests'];
-        $arrivals = $_POST['arrivals'];
-        $leaving = $_POST['leaving'];
+        // Validate and sanitize inputs (if needed)
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $phone_number = htmlspecialchars($_POST['phone_number']);
+        $address = htmlspecialchars($_POST['address']);
+        $destination = htmlspecialchars($_POST['destination']); // Corrected variable name
+        $guests = htmlspecialchars($_POST['guests']);
+        $arrivals = htmlspecialchars($_POST['arrivals']);
+        $leaving = htmlspecialchars($_POST['leaving']);
 
-        $stmt = $conn->prepare("INSERT INTO book_form (name, email, phone_number, address, destenation, guests, arrivals, leaving) 
+        $stmt = $conn->prepare("INSERT INTO book_form (name, email, phone_number, address, destination, guests, arrivals, leaving) 
                                 VALUES (:name, :email, :phone_number, :address, :destination, :guests, :arrivals, :leaving)");
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':phone_number', $phone_number);
         $stmt->bindParam(':address', $address);
-        $stmt->bindParam(':destination', $destination);
+        $stmt->bindParam(':destination', $destination); // Corrected parameter binding
         $stmt->bindParam(':guests', $guests);
         $stmt->bindParam(':arrivals', $arrivals);
         $stmt->bindParam(':leaving', $leaving);

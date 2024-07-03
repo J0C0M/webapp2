@@ -192,94 +192,62 @@ ul.menu {
   color: midnightblue;
   text-decoration: underline;
 }
-/*=============================Booking=============================*/
-.booking .book-form{
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.411);
-  border-radius: 30px;
+/* styles.css */
+
+.book-form {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f293;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10%;
+  margin-bottom: 28%;
 }
 
-.booking .book-form .flex{
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 2rem;
+.book-form .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.input{
-  border-radius: 10px;
+.book-form .inputbox {
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 20px;
 }
 
-.inputbox{
-  font-family: "Poetsen One", sans-serif;
+.book-form .inputbox span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.booking .book-form .flex .inputbox{
-  flex: 1 1 41rem;
-}
-
-.booking .book-form .flex .inputbox input{
+.book-form .input {
   width: 100%;
-  padding: 1.2rem 1.4rem;
-  font-size: 1.6rem;
-  color: var(--black);
-  text-transform: none;
-  margin-top: 1.5rem;
-  border: var(--border);
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.booking .book-form .flex .inputbox input:focus{
-  background: var(--black);
-  color: var(--white);
-}
-
-.booking .book-form .flex .inputbox input:focus::placeholder{
-  color: var(--light-white);
-}
-
-.booking .book-form .flex .inputbox span{
-  font-size: 1.5rem;
-  color: var(--black);
-}
-
-.booking .book-form .btn{
-  margin-top: 50px;
-}
-
-.btn{
-  display: inline-block;
-  background: var(--black);
-  margin-top: 1rem;
-  color: var(--black);
-  font-size: 1.7rem;
-  padding: 1rem 3rem;
+.book-form .btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3AFFB8;
+  color: blakc;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 10px;
-  font-family: "Poetsen One", sans-serif;
-  border-color: #000000;
-  border-width: 3px;
-}
-
-.btn:hover{
-  background-color: #00FFC2;
-}
-
-.heading-title {
   text-align: center;
-  margin-bottom: 3rem;
-  font-size: 5rem;
-  text-transform: uppercase;
-  color: #00FFC2;
-  font-family: "Poetsen One", sans-serif;
-  animation: fadeIn .6s linear backwards .6s;
-  -webkit-text-stroke: rgba(0, 0, 0, 0.515) 3px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-@keyframes fadeIn {
-  0%{
-    transform: scale(0);
-    opacity: 0;
-  }
+.book-form .btn:hover {
+  background-color: #3AFFB8;
 }
+
 /*=============================Banner=============================*/
 
 .banner-video {
