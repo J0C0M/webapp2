@@ -217,6 +217,10 @@ ul.menu {
   justify-content: space-between;
 }
 
+span{
+  font-family: "Poetsen One", sans-serif;
+}
+
 .book-form .inputbox {
   flex-basis: calc(50% - 10px);
   margin-bottom: 20px;
