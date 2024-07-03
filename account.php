@@ -58,7 +58,8 @@ try {
 
     <div class="container">
         <h1 class="my-4">Your Booked Flights</h1>
-        
+        <a href="logout.php" Uitloggen>Uitloggen</a>
+
         <?php if (!empty($bookings)): ?>
         <table class="table table-bordered">
             <thead class="table-dark">

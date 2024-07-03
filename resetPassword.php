@@ -40,13 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="login-form-box">
             <div class="login-introduction-box">
                 <p class="login-introduction-text-top">
-                    Hallo,
+                    Wachtwoord
                 </p>
                 <p class="login-introduction-text-bottom">
-                    Welkom!
+                    vergeten?
                 </p>
             </div>
-            <form name="login-form" action="forgotPassword.php" method="post" class="login-form">
+            <form name="login-form" action="resetPassword.php" method="post" class="login-form">
                 <input type="email" id="email" name="email" class="login-name-box" placeholder="email">
                 <input type="password" id="password" name="password" class="login-name-box" placeholder="Nieuw wachtwoord">
                 <div class="login-button-box">
