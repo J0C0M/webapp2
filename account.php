@@ -8,7 +8,9 @@ if (!isset($_SESSION['email'])) {
 $servername = "mysql_db"; // replace with your database server name
 $username = "root"; // replace with your database username
 $password = "rootpassword"; // replace with your database password
-$dbname = "book_db"; // replace with your database name
+$dbname = "vakantie"; // replace with your database name
+
+
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -17,7 +19,8 @@ try {
     $email = $_SESSION['email'];
 
     // Fetch bookings for the logged-in user
-    $stmt = $conn->prepare("SELECT * FROM book_form WHERE email = :email ORDER BY id DESC");
+    //$stmt = $conn->prepare("SELECT * FROM book_form WHERE email = :email ORDER BY id DESC");
+    $stmt = $conn->prepare("SELECT book_form.name, book_form.email, book_form.phone_number, book_form.address, book_form.guests, book_form.arrivals, book_form.leaving, boeken.price FROM `book_form` INNER JOIN boeken ON book_form.destination = boeken.name WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -82,12 +85,13 @@ try {
                         <td><?php echo htmlspecialchars($booking['phone_number']); ?></td>
                         <td><?php echo htmlspecialchars($booking['address']); ?></td>
                         <td><?php echo isset($booking['destination']) ? htmlspecialchars($booking['destination']) : 'N/A'; ?></td> <!-- Display destination or 'N/A' if not set -->
+                        <td><?php echo htmlspecialchars($booking['price']); ?></td>
                         <td><?php echo htmlspecialchars($booking['guests']); ?></td>
                         <td><?php echo htmlspecialchars($booking['arrivals']); ?></td>
                         <td><?php echo htmlspecialchars($booking['leaving']); ?></td>
                         <td>
                             <form method="post">
-                                <button type="submit" name="cancel" value="<?php echo $booking['id']; ?>" class="btn btn-danger">Cancel</button>
+                                <button type="submit" name="cancel" class="btn btn-danger">Cancel</button>
                             </form>
                         </td>
                     </tr>

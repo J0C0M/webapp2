@@ -162,39 +162,45 @@
       </div>
       <div class="modal-body">
         <!-- Booking Form -->
+        <section>
         <form action="book_form.php" method="post" class="book-form">
-    <input type="hidden" id="vacationName" name="vacationName">
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-        <label for="phone_number">Phone Number:</label>
-        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
-    </div>
-    <div class="form-group">
-        <label for="address">Address:</label>
-        <input type="text" class="form-control" id="address" name="address" required>
-    </div>
-    <div class="form-group">
-        <label for="guests">Number of Guests:</label>
-        <input type="number" class="form-control" id="guests" name="guests" required>
-    </div>
-    <div class="form-group">
-        <label for="arrivals">Arrival Date:</label>
-        <input type="date" class="form-control" id="arrivals" name="arrivals" required>
-    </div>
-    <div class="form-group">
-        <label for="leaving">Departure Date:</label>
-        <input type="date" class="form-control" id="leaving" name="leaving" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit Booking</button>
-</form>
-
+            <div class="flex">
+                <div class="inputbox">
+                    <span>Name :</span>
+                    <input class="input" type="text" placeholder="Enter your name" name="name" required>
+                </div>
+                <div class="inputbox">
+                    <span>Email :</span>
+                    <input class="input" type="email" placeholder="Enter your email" name="email" required>
+                </div>
+                <div class="inputbox">
+                    <span>Phone Number :</span>
+                    <input class="input" type="text" placeholder="Enter your phone number" name="phone_number" required>
+                </div>
+                <div class="inputbox">
+                    <span>Address :</span>
+                    <input class="input" type="text" placeholder="Enter your address" name="address" required>
+                </div>
+                <div class="inputbox">
+                    <span>Destination :</span>
+                    <input class="input" type="text" placeholder="Enter your destination" name="destination" required>
+                </div>
+                <div class="inputbox">
+                    <span>Number of Guests :</span>
+                    <input class="input" type="number" placeholder="Enter number of guests" name="guests" required>
+                </div>
+                <div class="inputbox">
+                    <span>Arrival Date :</span>
+                    <input class="input" type="date" name="arrivals" required>
+                </div>
+                <div class="inputbox">
+                    <span>Leaving Date :</span>
+                    <input class="input" type="date" name="leaving" required>
+                </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
       </div>
     </div>
   </div>
