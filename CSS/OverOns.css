@@ -1,0 +1,197 @@
+html,body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #FAFAFA;
+    color: #686963;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    }
+
+
+/*header*/
+header {
+    background-color: #8AA29E;
+    height: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .epic-vacations-logo {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 48px;
+  }
+  
+  nav {
+    gap: 10%;
+  }
+  
+  .header-btn {
+    font-family: "JetBrains Mono", monospace;
+    text-decoration: none;
+    font-size: 32px;
+    margin: 25px;
+  }
+  
+  .nav-color {
+    color: white;
+    transition: all 0.8s;
+  }
+  
+  .nav-color:hover {
+    color: #393e3d;
+    transition:  0.8s
+  }
+  
+  .btn-backgrnd {
+    background-color: white;
+    height: 77px;
+    width: 155px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  .login-color {
+    color: #8AA29E;
+    transition: all 0.8s;
+  }
+  
+  .login-color:hover {
+    color: #dbede9;
+    transition:  0.8s
+  }
+
+  /*footer*/
+footer{
+    background-color: rgba(58, 255, 184, 1);
+    height: 250px;
+    font-family: "JetBrains Mono", monospace;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    padding: 10px;
+  }
+  .contact-button{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    width: 200px;
+    cursor: pointer;
+  }
+  
+  .hold-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    height: 40%;
+    font-size: 25px;
+  }
+  .hold-images{
+    display: flex;
+    gap: 30px;
+  }
+  .hold-div-2{
+    cursor: pointer;
+    width: 90%;
+    height: 30%;
+    font-size: 125%;
+    font-family: "JetBrains Mono", monospace;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: stretch;
+  }
+  
+  .privacy{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    width: 90px;
+  }
+  
+  .terms-of-service{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    width: 200px;
+    cursor: pointer;
+  }
+  
+/*Over ons css*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background-color: #E3F2FD;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'PoetsenOne', sans-serif;
+    color: #DB5461;
+    margin: 0;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.content h2 {
+    font-family: 'PoetsenOne', sans-serif;
+    color: #8AA29E;
+}
+
+.content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.button {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #00FFC2;
+    border: none;
+    padding: 10px 20px;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #8AA29E;
+}
+
+.over-ons-home {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    width: 90%;
+    background-color: #E3F2FD;
+}
