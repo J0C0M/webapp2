@@ -102,8 +102,6 @@
     </form>
 </section>
 
-
-
     <div class="container">
   <?php
   $host = 'mysql_db';
