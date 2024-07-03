@@ -13,34 +13,27 @@
     include("include/header.php");
     include("include/connect.php");
 
-    // dit is te vaak gebeurd
-    if (!($pdo instanceof mysqli)) {
-        die("kan niet connecten naar database.");
-    }
-
-    // contact php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = htmlspecialchars($_POST["name"]);
         $email = htmlspecialchars($_POST["email"]);
         $message = htmlspecialchars($_POST["message"]);
 
-        $stmt = $pdo->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $name, $email, $message);
+        try {
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        if ($stmt->execute()) {
-            echo "<div class='success'>New contact submission has been sent!</div>";
-        } else {
-            echo "<div class='error'>Error: " . $stmt->error . "</div>";
+            $stmt = $pdo->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
+            if ($stmt->execute([$name, $email, $message])) {
+                } else {
+                echo "<div class='error'>Error: " . $stmt->errorInfo()[2] . "</div>";
+            }
+        } catch (PDOException $e) {
+            echo "<div class='error'>connectie is mislukt: " . $e->getMessage() . "</div>";
         }
-
-        $stmt->close();
     }
-
-    $conn->close();
     ?>
 
-<div class="contact-container">
-        <h1 class="index-btn">Contact us</h1>
+    <div class="contact-container">
+        <h1 class="index-btn">Contact Us</h1>
         <form action="" method="post">
             <div class="form-group">
                 <label class="contact-text" for="name">Name</label>
@@ -54,7 +47,7 @@
                 <label class="contact-text" for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button class="btn" id="submit" type="submit">Submit</button>
         </form>
     </div>
 

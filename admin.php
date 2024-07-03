@@ -108,7 +108,7 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === 1) {
             <tbody>
                 <?php
                 // Fetch all vacation packages
-                $sql = "SELECT * FROM boeken";
+                $sql = "SELECT * FROM boeken";  
                 $stmt = $pdo->query($sql);
 
                 while ($boeken = $stmt->fetch()) {
